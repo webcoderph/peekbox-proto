@@ -3,11 +3,9 @@
 one:
   title: MyString
   description: MyText
-  category: 
-  user: 
+  album: 
 
 two:
   title: MyString
   description: MyText
-  category: 
-  user: 
+  album: 
