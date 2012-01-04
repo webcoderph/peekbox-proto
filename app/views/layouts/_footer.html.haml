@@ -1,0 +1,42 @@
+%div.container.footer
+	=Rails.application.config.cache_links
+	%div.twitter
+		%div#tweetbar
+			= link_to "", "#", :id => "left"
+		#tweetbar
+			= link_to image_tag("pb/bird.png",:border => 0), "#"
+		#tweetbar
+		/	tweet goes here
+		#tweetbar
+			%div#tweets
+		#tweetbar
+			= link_to "", "#", :id => "right"
+	%div.panels
+		%div#categories
+		%div#welikeyou
+			%p 
+				if you like us too, hop over to facebook for exclusive news and offers
+		%div#newsletter
+			%p 
+				Sign up to our newsletter to recieve all the bike goodness you'll ever need
+			%div.form
+				%form{ :method => "post"}
+					%ul
+						%li
+							%input{:type => "text" , :name=> "name"}
+						%li
+							%input{:type => "text" , :name=> "email"}
+						%li
+							%input{:type => "submit" , :name=> "submit"}
+	%div#copyright
+		%div.rights
+			%p
+				2011 peekbox all rights reserved. 
+				= link_to "Peekbox.tv", "#"
+		%div.share
+			%div#social
+				/ facebook goes here
+				= link_to image_tag("pb/facebook_32.png"), "#"
+			#social
+				/ facebook goes here
+				= link_to image_tag("pb/twitter_32.png"), "#"
