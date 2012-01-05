@@ -72,13 +72,12 @@ ActiveRecord::Schema.define(:version => 20120104154531) do
   create_table "videos", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "category_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
-  add_index "videos", ["category_id"], :name => "index_videos_on_category_id"
   add_index "videos", ["user_id"], :name => "index_videos_on_user_id"
 
 end
