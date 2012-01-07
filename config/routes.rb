@@ -1,4 +1,8 @@
 Peekbox::Application.routes.draw do
+  get "static/company"
+
+  get "static/help"
+
   get "public/index"
 
   get "public/company"
