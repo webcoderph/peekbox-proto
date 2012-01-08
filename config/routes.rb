@@ -1,9 +1,25 @@
 Peekbox::Application.routes.draw do
-  get "home/index"
 
-  get "static/company"
 
-  get "static/help"
+#  get "user/register_user"
+#
+#  get "user/sign_in"
+#
+#  get "user/forgot_password"
+#
+#  get "user/register"
+#
+#  get "user/signin"
+#
+#  get "user/forgot"
+
+#	resources :home, :only => [:index]
+	resources :users, :except => :destroy
+
+	get 'help' => "static#help",  :as => "help"
+
+	get 'company' => "static#company",  :as => "company"
+
 
 
   # The priority is based upon order of creation:
@@ -55,7 +71,7 @@ Peekbox::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'public#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
