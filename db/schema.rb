@@ -11,22 +11,45 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104154531) do
+ActiveRecord::Schema.define(:version => 20120108160338) do
 
-  create_table "albums", :force => true do |t|
-    t.string   "title"
-    t.text     "location"
-    t.integer  "user_id"
+  create_table "ads", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "albums", ["user_id"], :name => "index_albums_on_user_id"
+  create_table "ads_states", :force => true do |t|
+    t.boolean  "active"
+    t.integer  "ads_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ads_states", ["ads_id"], :name => "index_ads_states_on_ads_id"
+
+  create_table "albums", :force => true do |t|
+    t.string   "title"
+    t.text     "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "video_id"
+    t.integer  "user_id"
   end
 
   create_table "events", :force => true do |t|
@@ -35,12 +58,10 @@ ActiveRecord::Schema.define(:version => 20120104154531) do
     t.datetime "date"
     t.string   "location"
     t.text     "description"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
-
-  add_index "events", ["user_id"], :name => "index_events_on_user_id"
 
   create_table "newsletters", :force => true do |t|
     t.string   "name"
@@ -52,19 +73,22 @@ ActiveRecord::Schema.define(:version => 20120104154531) do
   create_table "pictures", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "album_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "album_id"
   end
 
-  add_index "pictures", ["album_id"], :name => "index_pictures_on_album_id"
-
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "fname"
-    t.string   "lname"
     t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "password"
+    t.text     "location"
+    t.string   "occupation"
+    t.string   "website"
+    t.boolean  "sex"
+    t.boolean  "admin",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,13 +96,10 @@ ActiveRecord::Schema.define(:version => 20120104154531) do
   create_table "videos", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "category_id"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "category_id"
   end
-
-  add_index "videos", ["category_id"], :name => "index_videos_on_category_id"
-  add_index "videos", ["user_id"], :name => "index_videos_on_user_id"
 
 end
