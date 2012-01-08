@@ -1,17 +1,10 @@
 Peekbox::Application.routes.draw do
+  get "home/index"
+
   get "static/company"
 
   get "static/help"
 
-  get "public/index"
-
-  get "public/company"
-
-  get "public/help"
-
-  get "index/company"
-
-  get "index/help"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
