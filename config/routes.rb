@@ -1,11 +1,11 @@
 Peekbox::Application.routes.draw do
 
 
-#  get "user/register_user"
+  get "user/register_user"
 #
-#  get "user/sign_in"
+  get "user/sign_in"
 #
-#  get "user/forgot_password"
+  get "user/forgot_password"
 #
 #  get "user/register"
 #
@@ -14,7 +14,6 @@ Peekbox::Application.routes.draw do
 #  get "user/forgot"
 
 #	resources :home, :only => [:index]
-	resources :users, :except => :destroy
 
 	get 'help' => "static#help",  :as => "help"
 
