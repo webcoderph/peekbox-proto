@@ -38,3 +38,5 @@ end
 gem 'therubyracer'
 gem 'execjs'
 gem 'haml'
+
+gem 'devise'
