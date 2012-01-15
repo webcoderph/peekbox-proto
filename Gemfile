@@ -40,3 +40,7 @@ gem 'execjs'
 gem 'haml'
 
 gem 'devise'
+group :test, :development do 
+	gem 'rspec-rails', '2.8'
+end
+
