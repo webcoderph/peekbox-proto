@@ -1,6 +1,8 @@
 Peekbox::Application.routes.draw do
 
 
+  devise_for :users
+
   get "user/register_user"
 #
   get "user/sign_in"
