@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Video do
 
-	it "should have a category" do 
+	it "should only have one category" do 
 		vid = Video.new
-		vid.category.save.should be_false
+		vid.category.count.should == 1 
 	end
 
 	it "should have a video" do 
