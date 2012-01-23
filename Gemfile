@@ -42,5 +42,8 @@ gem 'haml'
 gem 'devise'
 group :test, :development do 
 	gem 'rspec-rails', '2.8'
+	gem 'factory_girl_rails'
+	gem 'capybara'
+	gem 'guard-rspec'
 end
 
