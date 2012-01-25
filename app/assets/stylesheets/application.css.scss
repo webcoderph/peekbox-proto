@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+$container-width: 966px;
+
+$small-link: 12px;
+
+@mixin rounder($side, $radius: 10px) {
+	@if $side == all {
+		-webkit-border-radius: $radius;
+		-moz-border-radius: $radius;
+		border-radius: $radius;
+	}
+
+	@if $side != all {
+		border-#{$side}-radius: $radius;
+		-moz-border-radius-#{$side}: $radius;
+		-webkit-border-#{$side}-radius: $radius;
+	}
+}
+
+@mixin wrapper-container {
+	margin:0 auto;
+	width: $container-width;
+}
+
+body{
+	margin:0px;
+}
+
+div#header{
+	height: 50px; 
+	padding:0px 0px 0px 0px;
+	position: relative;
+	z-index: 10;
+	background: #2a2d30 url(pb/header-glow.png) top center no-repeat;
+
+	#wrapper {
+		@include wrapper-container;
+	}
+
+	#sign_status {
+		margin-top:5px;
+		font-size:$small-link;
+		float:right;
+		padding: 10px;
+		@include rounder(all, 10px);
+		background: {
+			color: #d1d1d1	
+		}
+		font-family:verdana;
+	}
+}
+
+#wrapper {
+	#container {
+		@include wrapper-container;
+		#flash {
+			width:100%;
+			margin-top:20px;
+			span {
+				padding:5px;
+			}
+				.alert {
+					border: {
+						color: #ff9999;
+						style: solid;
+						width: 10px;
+					}
+				}
+				.notice {
+					border: {
+						color: #99DD99;
+						style: solid;
+						width: 10px;
+					}
+				}
+		}
+	}
+}
+

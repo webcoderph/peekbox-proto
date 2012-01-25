@@ -6,12 +6,25 @@
 	= javascript_include_tag "application"
 	= csrf_meta_tags
 %body
-	=
-		%p.notice
-			= notice
-		%p.alert
-			=alert
-	/ main content - start
-	= yield
-	/ main content - end
-	= render :partial => "layouts/footer"
+	%div#wrapper
+		%div#header
+			%div#wrapper
+				%div#sign_status
+					-if user_signed_in?
+						%p
+							Welcome  
+							= current_user.first_name
+					-else
+						= link_to 'Sign in', new_user_session_path
+						or
+						= link_to 'Register', new_user_registration_path
+		#container
+			%div#flash
+				%span.notice
+					= notice
+				%span.alert
+					= alert
+			/ main content - start
+			= yield
+			/ main content - end
+			= render :partial => "layouts/footer"
