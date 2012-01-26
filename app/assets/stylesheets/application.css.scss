@@ -29,15 +29,18 @@ $small-link: 12px;
 	width: $container-width;
 }
 
+@mixin section {
+	height: 50px;
+}
+
 body{
 	margin:0px;
 }
 
 div#header{
-	height: 50px; 
+	@include section;
 	padding:0px 0px 0px 0px;
 	position: relative;
-	z-index: 10;
 	background: #2a2d30 url(pb/header-glow.png) top center no-repeat;
 
 	#wrapper {
@@ -54,6 +57,31 @@ div#header{
 			color: #d1d1d1	
 		}
 		font-family:verdana;
+	}
+
+}
+
+div#menu {
+	@include wrapper-container;
+	height:60px;
+	#links-container {
+		float:left;
+		.link {
+			display:inline;
+			.item {
+				float:left;
+				padding:20px 10px 20px 10px;
+				list-style:none;
+			}
+		}
+	}
+	#search-container {
+		float:left;
+		padding-top:17px;
+		padding-bottom:14px;
+		#search {
+			width:200px;
+		}
 	}
 }
 
