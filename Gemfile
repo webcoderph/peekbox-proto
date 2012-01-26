@@ -39,6 +39,9 @@ gem 'therubyracer'
 gem 'execjs'
 gem 'haml'
 
+gem 'ruby_parser'
+gem 'hpricot'
+
 gem 'devise'
 group :test, :development do 
 	gem 'rspec-rails', '2.8'
