@@ -38,6 +38,7 @@ end
 gem 'therubyracer'
 gem 'execjs'
 gem 'haml'
+gem 'haml-rails'
 
 gem 'ruby_parser'
 gem 'hpricot'
