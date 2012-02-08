@@ -39,11 +39,12 @@ gem 'therubyracer'
 gem 'execjs'
 gem 'haml'
 gem 'haml-rails'
-
 gem 'ruby_parser'
 gem 'hpricot'
-
 gem 'devise'
+gem 'carrierwave'
+
+
 group :test, :development do 
 	gem 'rspec-rails', '2.8'
 	gem 'factory_girl_rails'

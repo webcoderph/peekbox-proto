@@ -1,18 +1,6 @@
 Peekbox::Application.routes.draw do
 
-
-  get "albums/index"
-
-  devise_for :users, :controllers => {:session => "user/session"}
-
-#
-#  get "user/register"
-#
-#  get "user/signin"
-#
-#  get "user/forgot"
-
-#	resources :home, :only => [:index]
+	devise_for :users, :controllers => {:session => "user/session"}
 
 	get 'help' => "static#help",  :as => "help"
 
@@ -20,19 +8,19 @@ Peekbox::Application.routes.draw do
 
 	#all about users
 	namespace :profile do
-		resources :albums
+		resources :albums do
+			resources :images
+		end
 		resources :events
 		resources :videos
 	end
-
 
 	resources :videos do 
 		resources :comments
 	end 
 
-	resources :albums do
-		resources :pictures
-	end
+	resource :albums
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
