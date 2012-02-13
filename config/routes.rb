@@ -10,6 +10,7 @@ Peekbox::Application.routes.draw do
 
 	#all about users
 	namespace :profile do
+		resources :users, :only => [:edit]
 		resources :albums do
 			resources :images
 		end
