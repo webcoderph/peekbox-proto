@@ -6,6 +6,8 @@ Peekbox::Application.routes.draw do
 
 	get 'company' => "static#company",  :as => "company"
 
+	get "profile" => "profile/profile#index"
+
 	#all about users
 	namespace :profile do
 		resources :albums do
@@ -15,11 +17,16 @@ Peekbox::Application.routes.draw do
 		resources :videos
 	end
 
-	resources :videos do 
-		resources :comments
+
+	resources :videos, :only => [:show, :index] do 
+		resources :comments, :only => [:new, :show, :index]
 	end 
 
-	resource :albums
+	resources :events, :only => [:show, :index]
+
+	resources :albums, :only => [:show, :index] do
+		resources :images, :only => [:show, :index]
+	end
 
 
   # The priority is based upon order of creation:
