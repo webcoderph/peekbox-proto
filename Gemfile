@@ -32,7 +32,7 @@ gem 'jquery-rails'
 
 group :test do
   # Pretty printed test output
-  gem 'turn', '0.8.2', :require => false
+#  gem 'turn', '0.8.2', :require => false
 end
 
 gem 'therubyracer'
@@ -45,10 +45,10 @@ gem 'devise'
 gem 'carrierwave'
 
 
-group :test, :development do 
-	gem 'rspec-rails', '2.8'
-	gem 'factory_girl_rails'
-	gem 'capybara'
-	gem 'guard-rspec'
-end
+#group :test, :development do 
+#	gem 'rspec-rails', '2.8'
+#	gem 'factory_girl_rails'
+#	gem 'capybara'
+#	gem 'guard-rspec'
+#end
 
