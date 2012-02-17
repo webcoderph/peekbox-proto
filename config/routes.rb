@@ -1,6 +1,6 @@
 Peekbox::Application.routes.draw do
 
-	devise_for :users, :controllers => {:session => "user/session"}
+	devise_for :users, :controllers => {:session => "user/session"} 
 
 	get 'help' => "static#help",  :as => "help"
 
