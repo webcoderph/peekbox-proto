@@ -42,6 +42,7 @@ gem 'carrierwave'
 
 group :development do
 	gem 'heroku-rails'
+	gem 'ruby-debug19'
 end
 
 

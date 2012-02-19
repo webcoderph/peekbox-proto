@@ -1,6 +1,14 @@
 = form_for :video, :url => profile_videos_path do |video_form| 
 	%label{:for => "title"} Title:
+	%br
 	= video_form.text_field :title
+	%br
+	%label{:for => "Category"} Category:
+	%br
+	= collection_select(:video, :category_id, @category, :id, :title)
+	%br
 	%label{:for => "Description"} Description:
+	%br
 	= video_form.text_area :description
+	%br
 	= submit_tag "Add Video"
