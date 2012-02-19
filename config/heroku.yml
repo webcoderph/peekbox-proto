@@ -5,7 +5,7 @@ apps:
   # would create the RACK_ENV=production
   # and deploy to http://awesomeapp.heroku.com
   production: awesomeapp
-  staging: awesomeapp-staging
+  staging: peekbox-beta-staging
   legacy: awesomeapp-legacy
 
 stacks:
