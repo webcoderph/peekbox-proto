@@ -4,8 +4,8 @@ apps:
   #   production: awesomeapp
   # would create the RACK_ENV=production
   # and deploy to http://awesomeapp.heroku.com
-  production: awesomeapp
   staging: gentle-beach-4013
+  staging: gentle-beach-4013-staging
   legacy: awesomeapp-legacy
 
 stacks:
@@ -24,19 +24,19 @@ config:
   # you can also override configuration settings for each environment
   production:
   staging:
-    CONFIG_VAR1: "config1-staging"
 
 collaborators:
   # Be sure to add yourself as a collaborator, otherwise your
   # access to the app will be revoked.
   all:
-    - "my-heroku-email@somedomain.com"
-    - "another-heroku-email@somedomain.com"
+#    - "my-heroku-email@somedomain.com"
+ #   - "another-heroku-email@somedomain.com"
 
 domains:
   production:
-    - "awesomeapp.com"
-    - "www.awesomeapp.com"
+    - "gentle-beach-4013.heroku.com"
+  #  - "gentle-beach-4013.heroku.com"
+    #- "www.awesomeapp.com"
 
 addons:
   all:
