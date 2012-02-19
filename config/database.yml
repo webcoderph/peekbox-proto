@@ -21,6 +21,7 @@ test:
 production:
   adapter: postgresql
 	encoding: unicode
+	host: postgres://ubvhpmdmjo:AMIbLIbOQflm6E5W1s9I@ec2-23-21-227-193.compute-1.amazonaws.com/ubvhpmdmjo
   database: pg_development
   pool: 5
   timeout: 5000
