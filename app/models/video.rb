@@ -4,4 +4,5 @@ class Video < ActiveRecord::Base
 	has_many :comments
 
 	validates_presence_of :category
+	validates_presence_of :user
 end

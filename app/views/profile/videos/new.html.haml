@@ -1,2 +1,6 @@
-%h1
-	profile#new Video form 
+= form_for :video, :url => profile_videos_path do |video_form| 
+	%label{:for => "title"} Title:
+	= video_form.text_field :title
+	%label{:for => "Description"} Description:
+	= video_form.text_area :description
+	= submit_tag "Add Video"

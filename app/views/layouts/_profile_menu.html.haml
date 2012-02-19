@@ -1,9 +1,18 @@
 %ul.link
 	%li.item
 		= link_to 'Videos' , profile_videos_path
+		%ul.link
+			%li.item
+				= link_to 'New Video' , new_profile_video_path
 	%li.item
 		= link_to 'Albums' , profile_albums_path
+		%ul.link
+			%li.item
+				= link_to 'New Album' , new_profile_album_path
 	%li.item
 		= link_to 'Events' , profile_events_path
+		%ul.link
+			%li.item
+				= link_to 'New Event' , new_profile_event_path
 	%li.item
 		= link_to 'Information'

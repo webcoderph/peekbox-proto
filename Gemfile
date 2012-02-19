@@ -40,6 +40,10 @@ gem 'hpricot'
 gem 'devise'
 gem 'carrierwave'
 
+group :development do
+	gem 'heroku-rails'
+end
+
 
 #group :test, :development do 
 #	gem 'rspec-rails', '2.8'

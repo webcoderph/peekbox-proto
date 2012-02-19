@@ -1,9 +1,8 @@
 class StaticController < ApplicationController
-
-  def company
+  def help
   end
 
-  def help
+  def company
   end
 
 end
