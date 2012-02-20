@@ -5,7 +5,7 @@
 	%br
 	%label{:for => "Category"} Category:
 	%br
-	= collection_select(:video, :category_id, @category, :id, :title)
+	= collection_select(:video, :category_id, @all_category, :id, :title)
 	%br
 	%label{:for => "Description"} Description:
 	%br
