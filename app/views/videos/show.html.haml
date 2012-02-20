@@ -1,2 +1,12 @@
-= debug @video
-%h1 
+%h1
+	=@video.title
+%p
+	= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640")
+%p
+	%p
+		Description:
+		=@video.description
+%p
+	%p
+		Category:
+		=@video.category.title

@@ -1,4 +1,4 @@
-= form_for :video, :url => profile_videos_path do |video_form| 
+= form_for :video, :url => profile_videos_path, :html => {:multipart => true} do |video_form| 
 	%label{:for => "title"} Title:
 	%br
 	= video_form.text_field :title
@@ -10,5 +10,9 @@
 	%label{:for => "Description"} Description:
 	%br
 	= video_form.text_area :description
+	%br
+	%label{:for => "Media"} File:
+	%br
+	= video_form.file_field :media
 	%br
 	= submit_tag "Add Video"
