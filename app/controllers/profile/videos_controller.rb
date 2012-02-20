@@ -10,12 +10,16 @@ class Profile::VideosController < Profile::ProfileController
 	end
 
 	def create
-		@video = Video.new(params[:video])
+		@video = Video.new
+		@video.title = params[:video][:title]
+		@video.description = params[:video][:description]
+		@video.category = Category.find_by_id(params[:video][:category_id])
+		@video.media = params[:video][:media]
 		@video.user = current_user
-		if @video.save! && @video.media.store
+		if @video.save! 
 			redirect_to @video, :notice => "Successfully uploaded a video!"
 		else
-			render :action => 'new'
+			render :controller => "videos", :action => "index"
 		end
 	end
 end

@@ -5,6 +5,5 @@ class Video < ActiveRecord::Base
 	mount_uploader :media, MediaUploader
 
 	validates_presence_of :category
-	validates_presence_of :media
 	validates_presence_of :user
 end

@@ -31,7 +31,6 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'fog'
-gem 'carrierwave_direct'
 gem 'therubyracer'
 gem 'execjs'
 gem 'haml'
