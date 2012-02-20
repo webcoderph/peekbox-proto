@@ -9,13 +9,10 @@ class Profile::VideosController < Profile::ProfileController
 		@video = Video.new
 	end
 
-	def show
-	end
-
 	def create
 		@video = Video.new(params[:video])
 		@video.user = current_user
-		if @video.save!
+		if @video.save! && @video.media.store
 			redirect_to @video, :notice => "Successfully uploaded a video!"
 		else
 			render :action => 'new'
