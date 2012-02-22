@@ -1,3 +1,8 @@
 class Event < ActiveRecord::Base
   belongs_to :user
+	mount_uploader :image, EventUploader
+
+	validates_presence_of :user
+	validates_presence_of :title
+	validates_presence_of :description
 end

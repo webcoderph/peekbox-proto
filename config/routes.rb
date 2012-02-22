@@ -1,5 +1,7 @@
 Peekbox::Application.routes.draw do
 
+  get "category/show"
+
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	get "profile" => "profile/profile#index"
@@ -7,7 +9,7 @@ Peekbox::Application.routes.draw do
 
 	#all about users
 	namespace :profile do
-		resources :users, :only => [:edit]
+		resources :users, :only => [:index]
 		resources :albums do
 			resources :images
 		end
@@ -25,6 +27,8 @@ Peekbox::Application.routes.draw do
 	resources :albums, :only => [:show, :index] do
 		resources :images, :only => [:show, :index]
 	end
+
+	resources :category, :only => [:show]
 
 	get "help" => "static#help"
 

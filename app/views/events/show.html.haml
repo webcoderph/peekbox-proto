@@ -1,1 +1,17 @@
-=debug @event
+%h1
+	=@event.title
+-if @event.image?
+	%p
+		= image_tag(@event.image)
+	%p
+	%p
+		Location:
+		=@event.location
+%p
+	%p
+		Date:
+		=@event.date
+%p
+	%p
+		Description:
+		=@event.description

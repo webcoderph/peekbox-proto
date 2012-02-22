@@ -1,1 +1,18 @@
-= debug @events
+%h1
+	All Events
+%div#event_list
+	=@events.each do |event|
+		%div#event_each
+			%p#title
+				=link_to event.title, event_path(event.id)
+			%p#thumb
+				\/*thumb goes here*/
+			%p#description
+				Description:
+				=event.description
+			%p#upload_date
+				Uploaded at:
+				=event.created_at
+	
+
+

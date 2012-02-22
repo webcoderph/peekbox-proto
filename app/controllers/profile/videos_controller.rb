@@ -19,7 +19,7 @@ class Profile::VideosController < Profile::ProfileController
 		if @video.save! 
 			redirect_to @video, :notice => "Successfully uploaded a video!"
 		else
-			render :controller => "videos", :action => "index"
+			render :action => "new"
 		end
 	end
 end
