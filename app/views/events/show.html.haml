@@ -2,7 +2,7 @@
 	=@event.title
 -if @event.image?
 	%p
-		= image_tag(@event.image)
+		= image_tag @event.image_url(:event_page).to_s
 	%p
 	%p
 		Location:

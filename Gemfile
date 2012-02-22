@@ -39,6 +39,8 @@ gem 'ruby_parser'
 gem 'hpricot'
 gem 'devise'
 gem 'carrierwave'
+#gem 'rmagick'
+gem 'mini_magick'
 
 group :development do
 	gem 'heroku-rails'
