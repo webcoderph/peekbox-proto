@@ -1,2 +1,10 @@
-%h1
-	profile#new Video form 
+=form_for @album, :url => profile_albums_path, :html => {:multipart => true} do |album| 
+	%label{:for => "title"} Title:
+	%br
+	= album.text_field :title
+	%br
+	%label{:for => "image"} File:
+	= album.file_field :image
+	%br
+	= submit_tag "Add Image"
+	
