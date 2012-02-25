@@ -1,6 +1,11 @@
 %h1
 	%h1
-		profile#show	
+		Albums
+-@albums.each do |album|
+	%li
+		=album.title	
+			%li
+				=album.pictures.size
 	%p
 		show current user videos
 

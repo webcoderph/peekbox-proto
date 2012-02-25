@@ -1,1 +1,10 @@
-=debug @video
+%h1
+	=@album.title
+%p
+	= image_tag(@album.image, :width => "640")
+%p
+	%p
+		Description:
+		=@album.location
+
+=debug @album

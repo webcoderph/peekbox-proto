@@ -5,7 +5,10 @@ class Profile::AlbumsController < Profile::ProfileController
   end
 
 	def create
-		@album = Album.new(params[:album])
+		@album = Album.new
+		@album.title = params[:album][:title]
+		@album.location = params[:album][:location]
+		@album.image = params[:album][:image]
 		@album.user = current_user
 		if @album.save! 
 			redirect_to @album, :notice => "Successfully added an Album!"
