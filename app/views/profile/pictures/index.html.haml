@@ -11,3 +11,21 @@
 			=pic.description
 		%p
 			=link_to (image_tag image.image_url), image_path(image.id)
+
+
+= form_for :picture, :url => profile_album_pictures_path(@album.id), :html => {:multipart => true} do |picture_form| 
+	%label{:for => "title"} Title:
+	%br
+	=picture_form.text_field :title
+	%br
+	=picture_form.hidden_field :album
+	%br
+	%label{:for => "Description"} Description:
+	%br
+	= picture_form.text_area :description
+	%br
+	%label{:for => "Image"} File:
+	%br
+	= picture_form.file_field :image
+	%br
+	= submit_tag "Upload Picture"
