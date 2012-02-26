@@ -33,7 +33,7 @@ Peekbox::Application.routes.draw do
 	resources :events, :only => [:show, :index]
 
 	resources :albums, :only => [:show, :index] do
-		resources :images, :only => [:show, :index]
+		resources :pictures, :only => [:show, :index]
 	end
 
 	resources :category, :only => [:show]
