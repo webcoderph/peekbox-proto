@@ -1,5 +1,13 @@
 Peekbox::Application.routes.draw do
 
+  get "pictures/index"
+
+  get "pictures/show"
+
+  get "pictures/update"
+
+  get "pictures/destroy"
+
   get "category/show"
 
 	devise_for :users, :controllers => {:session => "user/session"} 
@@ -11,7 +19,7 @@ Peekbox::Application.routes.draw do
 	namespace :profile do
 		resources :users, :only => [:index]
 		resources :albums do
-			resources :images
+			resources :pictures
 		end
 		resources :events
 		resources :videos

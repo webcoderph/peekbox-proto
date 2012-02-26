@@ -173,6 +173,8 @@ GEM
       multi_json (>= 1.0.2)
     warden (1.1.0)
       rack (>= 1.0)
+    zencoder (2.4.0)
+      multi_json
 
 PLATFORMS
   ruby
@@ -197,3 +199,4 @@ DEPENDENCIES
   sqlite3
   therubyracer
   uglifier (>= 1.0.3)
+  zencoder

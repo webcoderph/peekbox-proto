@@ -1,11 +1,12 @@
 %h1
-	%h1
-		Albums
--@albums.each do |album|
-	%li
-		=album.title	
-			%li
-				=album.pictures.size
+	Albums
+-if @albums.empty?
 	%p
-		show current user videos
-
+		No Albums Found!
+-else
+	-@albums.each do |album|
+		%div
+			%div#album_cover
+				=link_to (image_tag album.image_url(:album_thumb).to_s), profile_album_pictures_path(album) 
+			%div#album_title
+				=album.title	
