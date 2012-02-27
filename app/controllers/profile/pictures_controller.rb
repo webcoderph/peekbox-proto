@@ -14,9 +14,9 @@ class Profile::PicturesController < Profile::ProfileController
 			@picture.user = current_user
 			@picture.album = @album
 			if @picture.save!
-				redirect_to album_path(@album), :notice => "Successfully added a Photo!"
+				redirect_to profile_album_pictures_path(@album), :notice => "Successfully added a Photo!"
 			else
-				render :action => "new"
+				render :action => "index"
 			end
 		else
 			render :action => "index"
