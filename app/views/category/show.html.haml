@@ -1,6 +1,5 @@
 %h1
 	=@title.title
-	Videos
 %div#video_list
 	=@videos.each do |vid|
 		%div#video_each
@@ -14,3 +13,6 @@
 			%p#upload_date
 				Uploaded at:
 				=vid.created_at
+%div#categories
+	= render :partial => "layouts/sidebar_categories"
+%br{:style=>"clear:both"}

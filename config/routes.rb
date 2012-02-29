@@ -36,7 +36,7 @@ Peekbox::Application.routes.draw do
 		resources :pictures, :only => [:show, :index]
 	end
 
-	resources :category, :only => [:show]
+	resources :category, :only => [:show], :path => "/video/category/"
 
 	get "help" => "static#help"
 
