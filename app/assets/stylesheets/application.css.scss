@@ -166,6 +166,7 @@ div#menu {
 	#bottom {
 		clear:both;
 		background: #222426 url(pb/bottom-shadow.png) repeat-x;
+		background-color: "#222426" repeat-y;
 		#wrapper {
 			@include wrapper-container;
 			#copyright {

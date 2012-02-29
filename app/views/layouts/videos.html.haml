@@ -32,9 +32,8 @@
 				%span.alert
 					= alert
 			/ main content - start
-			%div#videos
-				= yield
+			= yield
 			%div#categories
 				= render :partial => "layouts/sidebar_categories"
-			/ main content - end
-			/= render :partial => "layouts/footer"
+		= render :partial => "layouts/footer"
+		= render :partial => "layouts/bottom"
