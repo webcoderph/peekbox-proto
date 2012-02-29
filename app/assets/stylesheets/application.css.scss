@@ -170,11 +170,45 @@ div#menu {
 			@include wrapper-container;
 			#copyright {
 				color: #868686;
-				position:relative;
 				line-height:60px;
 				font-size:12px;
+				float:left;
+				width:48%;
 				a {
+					text-decoration:none;
 					color: #afeaf9;
+				}
+			}
+			#share {
+				float:left;
+				color: #868686;
+				line-height:60px;
+				font-size:12px;
+				width:48%;
+				a {
+					text-decoration:none;
+					color: #afeaf9;
+				}
+				#facebook_link {
+					width:32px;
+					height:32px;
+					display:block;
+					background: url(pb/facebook_32.png);
+					&:hover {
+						background-position: 0px -32px;
+					}
+				}
+				#twitter_link {
+					width:32px;
+					height:32px;
+					display:block;
+					background: url(pb/twitter_32.png);
+					&:hover {
+						background-position: 0px -32px;
+					}
+				}
+				.social {
+					float:right;
 				}
 			}
 		}
