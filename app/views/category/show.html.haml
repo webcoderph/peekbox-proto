@@ -1,5 +1,9 @@
-%h1
-	=@title.title
+%div#page-info
+	%span#title
+		=@title.title
+	%span#desc
+%br{:style => "clear:both;"}
+
 %div#video_list
 	=@videos.each do |vid|
 		%div#video_each
