@@ -20,19 +20,21 @@
 						= link_to 'Sign in', new_user_session_path
 						or
 						= link_to 'Register', new_user_registration_path
-		%div#menu
-			#links-container
-				= render :partial => "layouts/menu"
-			#search-container
-				= render :partial => "layouts/search"
-		#container
-			%div#flash
-				%span.notice
-					= notice
-				%span.alert
-					= alert
-			/ main content - start
-			= yield
-			/ main content - end
+		%div#menu_wide
+			%div#menu
+				#links-container
+					= render :partial => "layouts/menu"
+				#search-container
+					= render :partial => "layouts/search"
+		#container_wide
+			#container
+				%div#flash
+					%span.notice
+						= notice
+					%span.alert
+						= alert
+				/ main content - start
+				= yield
+				/ main content - end
 		= render :partial => "layouts/footer"
 		= render :partial => "layouts/bottom"

@@ -17,4 +17,20 @@ div#video_list {
 
 div#categories {
 	float:left;
+	width: 326px;
+	li {
+		list-style-type:none;
+		line-height:30px;
+		text-decoration: none;
+		display:list-item;
+		text-align: -webkit-match-parent;
+		border-bottom: 1px solid #D7D7D7;
+		font-size: 14px;
+		a {
+			text-decoration:none;
+			width:100%;
+			color: dimGray;
+			display:block;
+		}
+	}
 }

@@ -35,6 +35,7 @@ $small-link: 12px;
 
 body{
 	margin:0px;
+	background:url("pb/noise.png");
 	font-family: 'Ubuntu', arial, serif;
 }
 
@@ -62,26 +63,29 @@ div#header{
 
 }
 
-div#menu {
-	@include wrapper-container;
-	height:60px;
-	#links-container {
-		float:left;
-		.link {
-			display:inline;
-			.item {
-				float:left;
-				padding:20px 10px 20px 10px;
-				list-style:none;
+div#menu_wide {
+	background:url("pb/menu-bg.png");
+	#menu {
+		@include wrapper-container;
+		height:60px;
+		#links-container {
+			float:left;
+			.link {
+				display:inline;
+				.item {
+					float:left;
+					padding:20px 10px 20px 10px;
+					list-style:none;
+				}
 			}
 		}
-	}
-	#search-container {
-		float:left;
-		padding-top:17px;
-		padding-bottom:14px;
-		#search {
-			width:200px;
+		#search-container {
+			float:right;
+			padding-top:17px;
+			padding-bottom:14px;
+			#search {
+				width:200px;
+			}
 		}
 	}
 }
@@ -167,7 +171,7 @@ div#menu {
 		clear:both;
 		background: #222426 url(pb/bottom-shadow.png) repeat-x;
 		background-color: "#222426" repeat-y;
-		#wrapper {
+		#bottom-wrapper {
 			@include wrapper-container;
 			#copyright {
 				color: #868686;
