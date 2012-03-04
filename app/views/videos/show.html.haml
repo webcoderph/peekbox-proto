@@ -1,5 +1,7 @@
-%h1
-	=@video.title
+%div#page-info
+	%span#title
+		=@video.title
+	%span#desc
 %p
 	= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640")
 %p
