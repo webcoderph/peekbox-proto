@@ -1,5 +1,9 @@
-%h1
-	All Videos
+%div#page-info
+	%span#title
+		All Videos
+	%span#desc
+		Viewing Users Videos Online
+%br{:style => "clear:both;"}
 %div#video_list
 	=@videos.each do |vid|
 		%div#video_each
