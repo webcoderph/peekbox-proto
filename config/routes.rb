@@ -1,21 +1,13 @@
 Peekbox::Application.routes.draw do
 
-  get "information/search"
-
-  get "pictures/index"
-
-  get "pictures/show"
-
-  get "pictures/update"
-
-  get "pictures/destroy"
-
-  get "category/show"
 
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 
+
+
 	get "profile" => "profile/profile#index"
+	get "search_users" => "profile/search#user"
 
 	#Users
 	namespace :profile do
@@ -41,8 +33,6 @@ Peekbox::Application.routes.draw do
 	end
 
 	resources :category, :only => [:show], :path => "/video/category/"
-	
-
 
 	get "help" => "static#help"
 
@@ -106,4 +96,5 @@ Peekbox::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   match ":username" => "information#show"
+
 end
