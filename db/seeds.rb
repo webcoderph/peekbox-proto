@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-	usr = User.create([{email:'mayor_maryon@Yahoo.com.ph', first_name:'maryon', last_name:'mayor', password:'1234'}, {email:'gerald_gorosin@gmail.com', first_name:'gerald', last_name:'gorosin', password:'1234'}])
+	usr = User.create([{email:'mayor_maryon@Yahoo.com.ph', first_name:'maryon', last_name:'mayor', password:'123456', username:'maryonpogi'}, {email:'gerald_gorosin@gmail.com', first_name:'gerald', last_name:'gorosin', password:'123456', username:'kalbo'}])
 
 	#albums = Album.create([{title:'profile pictures', location:'pasig', user_id:usr.first}, {title:'art', location:nil, user_id:usr.last}, {title:'new york city', location:'america', user_id:usr.first}, {title:'gma 7', location:nil, user_id:usr.last}])
 	
