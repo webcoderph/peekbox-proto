@@ -1,21 +1,19 @@
 %ul.link
 	%li.item
-		= link_to 'Information'
-		%li.item
-			= link_to 'Videos' , profile_videos_path
-			%ul.link
-				%li.item
-					= link_to 'New Video' , new_profile_video_path
+		= link_to 'Videos' , profile_videos_path
+		%ul.link
+			%li.item
+				= link_to 'Add Video' , new_profile_video_path
 	%li.item
 		= link_to 'Albums' , profile_albums_path
 		%ul.link
 			%li.item
-				= link_to 'New Album' , new_profile_album_path
+				= link_to 'Add Album' , new_profile_album_path
 	%li.item
 		= link_to 'Events' , profile_events_path
 		%ul.link
 			%li.item
-				= link_to 'New Event' , new_profile_event_path
+				= link_to 'Add Event' , new_profile_event_path
 	%li.item
 		= link_to 'Friends' 
 		%ul.link
@@ -26,13 +24,11 @@
 		%ul.link
 			%li.item
 				= link_to 'Create Message' 
+			%li.item
+				= link_to 'Inbox' 
+			%li.item
+				= link_to 'Sent' 
+	%li.item
+		= link_to 'Shout Out' 
 
-
-%div
-	%form
-		%p
-			Shout Out!
-		%textarea
-		%br
-		%button shout out
-
+%br{:style=>"clear:both"}

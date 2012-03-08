@@ -1,3 +1,15 @@
 // Place all the styles related to the profile/profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#dashboard {
+	li.item {
+		padding:5px;
+		list-style:none;
+		float:left;
+		li.item {
+			clear:both;
+		}
+	}
+
+}

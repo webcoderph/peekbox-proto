@@ -3,15 +3,14 @@ Peekbox::Application.routes.draw do
 
 	devise_for :users, :controllers => {:session => "user/session"} 
 
-
-
-
 	get "profile" => "profile/profile#index"
-	get "search_users" => "profile/search#user"
-
 	#Users
 	namespace :profile do
-		resources :users, :only => [:index]
+		resources :users, :only => [:index] do 
+			collection do
+				post 'search'
+			end
+		end
 		resources :albums do
 			resources :pictures
 		end
@@ -95,6 +94,6 @@ Peekbox::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  match ":username" => "information#show"
+  match ":username" => "information#show", :as => "other_user"
 
 end

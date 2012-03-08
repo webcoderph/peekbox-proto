@@ -21,7 +21,4 @@ class User < ActiveRecord::Base
 	has_many :picture, :through => :album
 	has_many :comments
 
-
-
-
 end
