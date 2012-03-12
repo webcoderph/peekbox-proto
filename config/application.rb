@@ -48,6 +48,6 @@ module Peekbox
 		#if deploy on heroku
 		config.assets.initialize_on_precompile = false
 
-		config.action_mailer.default_url_options = {:host => "112.205.211.255", :port => "3000"}
+		config.action_mailer.default_url_options = {:host => "gentle-beach-4013.heroku.com"}
   end
 end
