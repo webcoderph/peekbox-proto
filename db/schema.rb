@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312093205) do
+ActiveRecord::Schema.define(:version => 20120312165756) do
 
   create_table "ads", :force => true do |t|
     t.string   "name"
@@ -64,15 +64,6 @@ ActiveRecord::Schema.define(:version => 20120312093205) do
     t.string   "image"
   end
 
-  create_table "friends", :force => true do |t|
-    t.integer  "friend_user_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "friends", ["user_id"], :name => "index_friends_on_user_id"
-
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
@@ -97,15 +88,6 @@ ActiveRecord::Schema.define(:version => 20120312093205) do
     t.integer  "album_id"
     t.string   "image"
   end
-
-  create_table "user_friends", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "friend_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "user_friends", ["user_id"], :name => "index_user_friends_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
@@ -142,7 +124,7 @@ ActiveRecord::Schema.define(:version => 20120312093205) do
     t.integer  "user_id"
     t.integer  "category_id"
     t.string   "media"
-    t.string   "ZencoderOutputId"
+    t.string   "zencoder_output_id"
     t.boolean  "processed"
   end
 

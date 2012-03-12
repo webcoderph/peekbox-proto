@@ -2,6 +2,8 @@
 	%span#title
 		=@video.title
 	%span#desc
+		by
+		=@video.user.username
 %p
 	= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640")
 %p
@@ -12,3 +14,4 @@
 	%p
 		Category:
 		=@video.category.title
+=@video.inspect

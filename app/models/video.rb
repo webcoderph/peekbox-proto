@@ -8,6 +8,7 @@ class Video < ActiveRecord::Base
 	validates_presence_of :category
 	validates_presence_of :user
 	validates_presence_of :media
+
 	def processed!
 		update_attribute(:processed, true)
 	end

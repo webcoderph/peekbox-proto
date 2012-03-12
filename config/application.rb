@@ -16,7 +16,7 @@ module Peekbox
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    config.autoload_paths += %W(#{config.root}/app/middleware/**/*)
+    #config.autoload_paths += %W(#{config.root}/app/middleware/**/*)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -48,6 +48,6 @@ module Peekbox
 		#if deploy on heroku
 		config.assets.initialize_on_precompile = false
 
-		config.action_mailer.default_url_options = {:host => "gentle-beach-4013.heroku.com"}
+		config.action_mailer.default_url_options = {:host => "112.205.211.255", :port => "3000"}
   end
 end
