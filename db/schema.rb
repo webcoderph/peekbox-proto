@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120307092420) do
+ActiveRecord::Schema.define(:version => 20120312093205) do
 
   create_table "ads", :force => true do |t|
     t.string   "name"
@@ -142,6 +142,8 @@ ActiveRecord::Schema.define(:version => 20120307092420) do
     t.integer  "user_id"
     t.integer  "category_id"
     t.string   "media"
+    t.string   "ZencoderOutputId"
+    t.boolean  "processed"
   end
 
 end

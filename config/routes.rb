@@ -3,6 +3,8 @@ Peekbox::Application.routes.draw do
 
 	devise_for :users, :controllers => {:session => "user/session"} 
 
+	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
+
 	get "profile" => "profile/profile#index"
 	#Users
 	namespace :profile do
