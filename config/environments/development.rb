@@ -45,5 +45,5 @@ Peekbox::Application.configure do
   config.assets.debug = true
 
 	# host for emailing using devise
-	config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+	config.action_mailer.default_url_options = { :host => ENV['URL'], :port => ENV['PORT'] }
 end
