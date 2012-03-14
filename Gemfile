@@ -42,6 +42,7 @@ gem 'carrierwave'
 gem 'zencoder'
 #gem 'rmagick'
 gem 'mini_magick'
+gem 'json'
 
 group :development do
 	gem 'heroku-rails'

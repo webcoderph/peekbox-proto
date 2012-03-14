@@ -7,6 +7,10 @@ class VideosController < ApplicationController
   def show
 		@video = Video.find_by_id(params[:id])
 		@all_categories = Category.all
+		if !@video.processed?
+			flash[:notice] = "Video is still Processing. Please Wait"
+		end
+		
   end
 
 end

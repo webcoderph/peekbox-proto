@@ -190,6 +190,7 @@ DEPENDENCIES
   heroku-rails
   hpricot
   jquery-rails
+  json
   mini_magick
   pg
   rails (= 3.1.3)

@@ -4,8 +4,9 @@
 	%span#desc
 		by
 		=@video.user.username
-%p
-	= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640")
+-if @video.processed?
+	%p
+		= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640")
 %p
 	%p
 		Description:
@@ -14,4 +15,3 @@
 	%p
 		Category:
 		=@video.category.title
-=@video.inspect
