@@ -8,9 +8,7 @@ class ZencoderCallbackController < ApplicationController
     sanitized_params.each do |key, value|
       zencoder_response = key.gsub('\"', '"')
     end
- 
-		puts "params_MM: #{sanitized_params[:output].inspect}"
- 
+
     video = Video.find_by_zencoder_output_id(sanitized_params[:output][:id].to_s)
     if sanitized_params[:output][:state] == "finished" && video
       video.processed!
