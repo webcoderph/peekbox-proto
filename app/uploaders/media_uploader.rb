@@ -55,35 +55,25 @@ class MediaUploader < CarrierWave::Uploader::Base
    end
 	
 	private
-  #https://peekbox.s3.amazonaws.com/uploads/video/media/1/Homemade_Fireworks_-_Great_balls_of_fire.mp4
 	def zencode(args)
-		#zencoder_response = Zencoder::Job.create({:input => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}/video.mp4",
-    #                                          :output => [{:base_url => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{@model.id}",
-    #                                                       :filename => "video.mp4",
-    #                                                       :label => "web",
-    #                                                       :notifications => [zencoder_callback_url(:protocol => 'http')],
-    #                                                       :video_codec => "h264",
-    #                                                       :audio_codec => "aac",
-    #                                                       :quality => 3,
-    #                                                       :width => 854,
-    #                                                       :height => 480,
-    #                                                       :format => "mp4",
-    #                                                       :aspect_mode => "preserve",
-    #                                                       :public => 1}]
-    #                                          })
 		zencoder_response = Zencoder::Job.create({:input => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}/video.mp4",
-                                              :output => [{:base_url => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{@model.id}",
-                                                           :filename => "video.mp4",
-                                                           :label => "web",
-                                                           :notifications => [zencoder_callback_url(:protocol => "http", :host => "gentle-beach-4013.heroku.com", :port => "80")],
-                                                           :video_codec => "h264",
-                                                           :audio_codec => "aac",
-                                                           :quality => 3,
-                                                           :width => 854,
-                                                           :height => 480,
-                                                           :format => "mp4",
-                                                           :aspect_mode => "preserve",
-                                                           :public => 1}]
+																							:outputs => [{:base_url => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{@model.id}",
+																														 :filename => "video.mp4",
+																														 :label => "web",
+																														 :notifications => [zencoder_callback_url(:protocol => "http", :host => ENV['URL'], :port => ENV['PORT'])],
+																														 :video_codec => "h264",
+																														 :audio_codec => "aac",
+																														 :quality => 3,
+																														 :width => 854,
+																														 :height => 480,
+																														 :format => "mp4",
+																														 :aspect_mode => "preserve",
+																														 :public => 1,
+																															:thumbnails => {:base_url => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/thumb/#{mounted_as}/#{@model.id}",
+																															:width => 200,
+																															:height => 114,
+																															:number => 10,
+																															:filename => "{{number}}_{{width}}x{{height}}-thumbnail"}}]
                                               }) 
 
 

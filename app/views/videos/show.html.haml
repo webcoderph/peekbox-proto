@@ -7,6 +7,12 @@
 -if @video.processed?
 	%p
 		= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640")
+	-if @video.user == current_user
+		%p
+			Select a thumbnail:
+			%p
+				-@video.thumbnails.each do |thumb|
+					=image_tag(thumb.url)
 %p
 	%p
 		Description:

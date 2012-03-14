@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312165756) do
+ActiveRecord::Schema.define(:version => 20120314161925) do
 
   create_table "ads", :force => true do |t|
     t.string   "name"
@@ -88,6 +88,15 @@ ActiveRecord::Schema.define(:version => 20120312165756) do
     t.integer  "album_id"
     t.string   "image"
   end
+
+  create_table "thumbnails", :force => true do |t|
+    t.string   "url"
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "thumbnails", ["video_id"], :name => "index_thumbnails_on_video_id"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
