@@ -6,7 +6,7 @@
 		=@video.user.username
 -if @video.processed?
 	%p
-		= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640")
+		= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
 	-if @video.user == current_user
 		%p
 			Select a thumbnail:

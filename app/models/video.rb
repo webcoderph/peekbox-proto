@@ -10,6 +10,8 @@ class Video < ActiveRecord::Base
 	validates_presence_of :user
 	validates_presence_of :media
 
+	scope :processed, where(:processed => true)
+
 	def processed!
 		update_attribute(:processed, true)
 	end
