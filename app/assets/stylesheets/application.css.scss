@@ -151,6 +151,20 @@ div#menu_wide {
 			width:966px;
 			margin: 0 auto;
 
+			#tweets {
+				width:600px;
+				float:left;
+				height: 77px;
+				position:relative;
+				top:20px;
+				ul {
+					li {
+						list-style-type:none;
+
+					}
+				}
+			}
+
 			#left-anchor {
 				width: 30px;
 				background: transparent url(pb/prev-arrow.png) no-repeat top left;
