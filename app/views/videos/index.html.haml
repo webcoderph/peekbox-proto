@@ -6,7 +6,7 @@
 %br{:style => "clear:both;"}
 %div#video_list
 	=@videos.each do |vid|
-		if vid.thumbnails.count < 1
+		-if vid.thumbnails.count > 1
 			%div#video_each
 				%p#title
 					=link_to vid.title, video_path(vid.id)
