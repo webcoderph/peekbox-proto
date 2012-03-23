@@ -72,7 +72,7 @@ class MediaUploader < CarrierWave::Uploader::Base
 																															:thumbnails => {:base_url => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/thumb/#{mounted_as}/#{@model.id}",
 																															:width => 200,
 																															:height => 114,
-																															:aspect_mode => "pad",
+																															:aspect_mode => "crop",
 																															:number => 10,
 																															:filename => "{{number}}_{{width}}x{{height}}-thumbnail"}}]
                                               }) 
