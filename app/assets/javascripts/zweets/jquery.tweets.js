@@ -77,11 +77,11 @@ $.extend(TweetsPlugin.prototype, {
     var tweetsHTML = '';
     if (instance.settings.singleRandomTweet) {
       var item = data[Math.floor(Math.random() * data.length)];
-      var tweetHtml = '<li>' + self._buildTweetText(item) + '<span class="created_at">' + self._buildTweetTimestamp(element, item) + '</span></li>';
+      var tweetHtml = '<li><span class="tweet_created_at">' + self._buildTweetTimestamp(element, item) + '</span> '+self._buildTweetText(item)+'</li>';
       tweetsHTML += tweetHtml;
     } else {
       $.each(data, function(i,item) {
-        var tweetHtml = '<li>' + self._buildTweetText(item) + '<span class="created_at">' + self._buildTweetTimestamp(element, item) + '</span></li>';
+        var tweetHtml = '<li><span class="tweet_created_at">' + self._buildTweetTimestamp(element, item) + '</span> '+self._buildTweetText(item)+'</li>';
         tweetsHTML += tweetHtml;
       });
     }

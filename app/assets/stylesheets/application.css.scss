@@ -152,6 +152,16 @@ div#menu_wide {
 			margin: 0 auto;
 
 			#tweets {
+				font-size: 16px;
+				line-height: 1.5em;
+				font-style: italic;
+				color: #838383;
+
+				a{
+					text-decoration: none;
+					color: #CCC;
+				}
+
 				width:600px;
 				float:left;
 				height: 77px;
