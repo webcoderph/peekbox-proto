@@ -45,7 +45,7 @@ class EventUploader < CarrierWave::Uploader::Base
    end
 
    version :event_page do
-     process :resize_to_fill => [640,640]
+     process :resize_to_limit => [640,640]
    end
 
   # Add a white list of extensions which are allowed to be uploaded.
