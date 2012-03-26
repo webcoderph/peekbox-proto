@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120314161925) do
+ActiveRecord::Schema.define(:version => 20120326022938) do
 
   create_table "ads", :force => true do |t|
     t.string   "name"
@@ -105,7 +105,6 @@ ActiveRecord::Schema.define(:version => 20120314161925) do
     t.text     "location"
     t.string   "occupation"
     t.string   "website"
-    t.boolean  "sex"
     t.boolean  "admin",                                 :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -120,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20120314161925) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "username"
+    t.string   "sex"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

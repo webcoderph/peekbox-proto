@@ -1,25 +1,33 @@
-
-%div
-	%div First Name:
-	%div 
-		=@user.first_name
-	%div Last Name:
-	%div 
-		=@user.last_name
-	%div Location:	
-	%div 
-		=@user.location
-	%div Occupation:	
-	%div 
-		=@user.occupation
-	%div Website:
-	%div 
-		=@user.website
-	%div Sex:
-	%div 
-		=@user.sex
-
-= debug @user
-= debug @recent_videos
-= debug @recent_albums
-= debug @recent_events
+=form_for(@user, :url => save_profile_user_index_path) do |u|
+	%br
+	= u.hidden_field :id
+	%br
+	%label{:for => "first_name"} First Name:
+	%br
+	= u.text_field :first_name
+	%br
+	%label{:for => "last_name"} Last Name:
+	%br
+	= u.text_field :last_name
+	%br
+	%label{:for => "location"} Location Name:
+	%br
+	= u.text_field :location
+	%br
+	%label{:for => "occupation"} Occupation:
+	%br
+	= u.text_field :occupation
+	%br
+	%label{:for => "sex"}  Sex:
+	%br
+	%label{:for => "sex_male"}  Male:
+	= u.radio_button( :sex, "male")
+	%label{:for => "sex_female"}  Female:
+	= u.radio_button( :sex, "female")
+	%br
+	%label{:for => "website"} Website:
+	%br
+	= u.text_field :website
+	%br
+	= submit_tag "Save Information!"
+			

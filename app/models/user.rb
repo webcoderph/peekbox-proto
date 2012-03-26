@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :username, :password, :password_confirmation, :remember_me
 
+	scope :is_admin, where(:admin => true)
+
 	validates	 :username, :uniqueness => true, :presence => true
 
 	has_many :friends, :through => :friendships
@@ -20,5 +22,6 @@ class User < ActiveRecord::Base
 	has_many :albums
 	has_many :picture, :through => :album
 	has_many :comments
+	
 
 end

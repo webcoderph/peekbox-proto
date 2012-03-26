@@ -32,3 +32,6 @@
 		= link_to 'Shout Out' 
 
 %br{:style=>"clear:both"}
+	-if current_user.admin?
+		= render :partial => "layouts/administrator_menu"
+		%br{:style=>"clear:both"}

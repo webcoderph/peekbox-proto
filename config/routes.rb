@@ -8,9 +8,14 @@ Peekbox::Application.routes.draw do
 	get "profile" => "profile/profile#index"
 	#Users
 	namespace :profile do
+		resources :user, :only => [:save, :update] do 
+			collection do
+				post "save"
+			end
+		end
 		resources :users, :only => [:index] do 
 			collection do
-				post 'search'
+				post "search"
 			end
 		end
 		resources :albums do
@@ -34,6 +39,7 @@ Peekbox::Application.routes.draw do
 	end
 
 	resources :category, :only => [:show], :path => "/video/category/"
+
 
 	get "help" => "static#help"
 

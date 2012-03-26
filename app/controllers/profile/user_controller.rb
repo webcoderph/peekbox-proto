@@ -12,4 +12,19 @@ class Profile::UserController < Profile::ProfileController
 	def edit
 	end
 
+	def update
+		@user = User.find_by_id(params[:user][:id])
+		@user.first_name = params[:user][:first_name]
+		@user.last_name= params[:user][:last_name]
+		@user.location = params[:user][:location]
+		@user.occupation = params[:user][:occupation]
+		@user.sex = params[:user][:sex]
+		@user.website = params[:user][:website]
+		
+		if @user.save! 
+			redirect_to profile_path, :notice => "Successfully save profile information!"
+		else
+			render :action => "index"
+		end
+	end
 end
