@@ -20,6 +20,7 @@ class Profile::UserController < Profile::ProfileController
 		@user.occupation = params[:user][:occupation]
 		@user.sex = params[:user][:sex]
 		@user.website = params[:user][:website]
+		@user.profilepic = params[:user][:profilepic]
 		
 		if @user.save! 
 			redirect_to profile_path, :notice => "Successfully save profile information!"
