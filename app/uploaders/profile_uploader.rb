@@ -34,11 +34,8 @@ class ProfileUploader < CarrierWave::Uploader::Base
 	end
 
 	version :default_photo_limit do
-		process :resize_to_limit => [600, 600]
-	end
-
-	version :profilepic do 
 		process :manualcrop
+		process :resize_to_limit => [600, 600]
 	end
 
   # Add a white list of extensions which are allowed to be uploaded.
