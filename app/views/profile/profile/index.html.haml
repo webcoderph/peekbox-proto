@@ -42,7 +42,15 @@
 		= hidden_field_tag(:w)
 		= submit_tag "Save Information!"
 
+%p
+	Picture on Profile
 %div{:style => "float:left", :width => "100%", :height => "auto"}
+	=image_tag @user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
+
+
+%p
+	UnCrop photo
+%div{:style => "float:right", :width => "100%", :height => "auto"}
 	=image_tag @user.profilepic_url(:default_photo_limit).to_s, :id => "profilepicture"
 
 %br{:style => "clear:both"}
