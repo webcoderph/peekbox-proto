@@ -3,11 +3,11 @@
 class ProfileUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
+  #include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  # storage :file
+  #storage :file
   storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -33,8 +33,12 @@ class ProfileUploader < CarrierWave::Uploader::Base
 		process :resize_to_fill => [600, 600]
 	end
 
-	version :default_photo_limit do
+	version :profile_pic do
 		process :manualcrop
+		process :resize_to_limit => [250, 331]
+	end
+
+	version :default_photo_limit do
 		process :resize_to_limit => [600, 600]
 	end
 
@@ -46,9 +50,9 @@ class ProfileUploader < CarrierWave::Uploader::Base
 
 	def manualcrop
     return unless model.cropping?
-    manipulate! do |img| 
-      img = img.crop(model.crop_x.to_i,model.crop_y.to_i,model.crop_h.to_i,model.crop_w.to_i) 
-    end 
+			manipulate! do |img| 
+				img = img.crop(model.crop_x.to_i, model.crop_y.to_i, model.crop_w.to_i, model.crop_h.to_i) 
+			end 
   end
 
   # Override the filename of the uploaded files:

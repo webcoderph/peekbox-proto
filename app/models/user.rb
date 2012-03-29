@@ -1,15 +1,14 @@
 class User < ActiveRecord::Base
+	after_update :reprocess_profile, :if => :cropping?
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
 	mount_uploader :profilepic, ProfileUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-	after_update :reprocess_profile, :if => :cropping?
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :username, :password, :password_confirmation, :remember_me
-
+  attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :crop_x, :crop_y, :crop_w, :crop_h
 	attr_accessor :crop_x, :crop_y, :crop_h, :crop_w
 
 	scope :is_admin, where(:admin => true)

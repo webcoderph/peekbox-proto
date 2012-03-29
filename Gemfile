@@ -40,7 +40,7 @@ gem 'hpricot'
 gem 'devise'
 gem 'carrierwave'
 gem 'zencoder'
-#gem 'rmagick'
+gem 'rmagick'
 gem 'mini_magick'
 gem 'json'
 
