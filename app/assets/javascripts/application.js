@@ -5,8 +5,7 @@
 // the compiled file.
 //
 //= require jquery
-//= require jcrop/jquery.Jcrop.min.js
-//= require jcrop/jquery.color.js
+//= require jquery_ujs
 //= require_tree .
 
 //= require uploadify/jquery.uploadify.v2.1.4.min

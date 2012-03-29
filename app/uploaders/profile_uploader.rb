@@ -37,11 +37,22 @@ class ProfileUploader < CarrierWave::Uploader::Base
 		process :resize_to_limit => [600, 600]
 	end
 
+	version :profilepic do 
+		process :manualcrop
+	end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
 	def extension_white_list
 		%w(jpg jpeg gif png)
 	end
+
+	def manualcrop
+    return unless model.cropping?
+    manipulate! do |img| 
+      img = img.crop(model.crop_x.to_i,model.crop_y.to_i,model.crop_h.to_i,model.crop_w.to_i) 
+    end 
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

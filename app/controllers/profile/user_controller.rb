@@ -21,6 +21,11 @@ class Profile::UserController < Profile::ProfileController
 		@user.sex = params[:user][:sex]
 		@user.website = params[:user][:website]
 		@user.profilepic = params[:user][:profilepic]
+
+    @user.crop_x = params[:cx]
+    @user.crop_y = params[:cy]
+    @user.crop_h = params[:h]
+    @user.crop_w = params[:w]
 		
 		if @user.save! 
 			redirect_to profile_path, :notice => "Successfully save profile information!"

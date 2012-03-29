@@ -5,8 +5,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+	after_update :reprocess_profile, :if => :cropping?
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :username, :password, :password_confirmation, :remember_me
+
+	attr_accessor :crop_x, :crop_y, :crop_h, :crop_w
 
 	scope :is_admin, where(:admin => true)
 
@@ -24,5 +28,12 @@ class User < ActiveRecord::Base
 	has_many :picture, :through => :album
 	has_many :comments
 	
+	def cropping?
+    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  end
+
+  def reprocess_profile
+    self.profilepic.recreate_versions!
+  end
 
 end

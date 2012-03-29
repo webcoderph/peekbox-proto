@@ -34,9 +34,15 @@
 		%br
 		= u.file_field :profilepic
 		%br
+		= hidden_field_tag(:cx)
+		= hidden_field_tag(:cy)
+		= hidden_field_tag(:cx2)
+		= hidden_field_tag(:cy2)
+		= hidden_field_tag(:h)
+		= hidden_field_tag(:w)
 		= submit_tag "Save Information!"
 
-%div{:style => "float:left", :width => "600px"}
+%div{:style => "float:left", :width => "100%", :height => "auto"}
 	=image_tag @user.profilepic_url(:default_photo_limit).to_s, :id => "profilepicture"
 
 %br{:style => "clear:both"}
