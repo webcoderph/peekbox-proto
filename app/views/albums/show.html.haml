@@ -7,4 +7,5 @@
 		Description:
 		=@album.location
 
-=debug @album
+-if current_user == @album.user
+	=current_user.inspect

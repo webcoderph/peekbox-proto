@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1#video-category {
+	size:14px;
+	background-color: gray;
+	color: white;
+	padding:10px 30px 10px 30px;
+	width: 300px;
+}
+
+h1#video-title {
+	size:14px;
+	color:gray;
+	margin-bottom:0px;
+}
+
+
 div#video_each{
 	border: {
 		color: #aaa;

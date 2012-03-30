@@ -1,23 +1,17 @@
 %div#page-info
-	%span#title
-		=@video.title
-	%span#desc
-		by
-		=@video.user.username
 -if @video.processed?
+	%h1#video-category
+		=@video.category.title
+	%h1#video-title
+		=@video.title
 	%p
 		= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
 	-if @video.user == current_user
 		%p
-			Select a thumbnail:
-			%p
-				-@video.thumbnails.each do |thumb|
-					=image_tag(thumb.url)
 %p
 	%p
-		Description:
 		=@video.description
-%p
-	%p
-		Category:
-		=@video.category.title
+%div#video-owner
+	%div#profilepic
+		=image_tag @video.user.profilepic_url(:profile_pic).to_s
+	%div#profile-information
