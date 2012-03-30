@@ -43,6 +43,7 @@ gem 'zencoder'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'json'
+gem 'kaminari'
 
 group :development do
 	gem 'heroku-rails'

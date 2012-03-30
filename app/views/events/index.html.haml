@@ -3,6 +3,7 @@
 		All Events
 	%span#desc
 		Viewing Events
+=paginate @events
 %div#event_list
 	=@events.each do |event|
 		%div#event_each

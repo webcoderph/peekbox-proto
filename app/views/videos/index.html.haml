@@ -4,6 +4,8 @@
 	%span#desc
 		Viewing Users Videos Online
 %br{:style => "clear:both;"}
+%div
+	=paginate @videos
 %div#video_list
 	=@videos.each do |vid|
 		-if vid.thumbnails.count > 1

@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   def index
-		@videos = Video.processed.all
+		@videos = Video.processed.page(params[:page]).per(1)
 		@all_categories = Category.all
   end
 
