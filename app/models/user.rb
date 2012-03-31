@@ -31,7 +31,6 @@ class User < ActiveRecord::Base
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
 
-
   def profile_geometry
     img = Magick::Image::read(self.profilepic.current_path).first
     @geometry = {:width => img.columns, :height => img.rows }
