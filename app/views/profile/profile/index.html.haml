@@ -36,17 +36,38 @@
 		%br
 		= hidden_field_tag(:cx)
 		= hidden_field_tag(:cy)
-		= hidden_field_tag(:cx2)
-		= hidden_field_tag(:cy2)
 		= hidden_field_tag(:h)
 		= hidden_field_tag(:w)
 		= submit_tag "Save Information!"
 
+= stylesheet_link_tag "jcrop/jquery.Jcrop"
+= javascript_include_tag "jcrop/jquery.Jcrop.min"
+%script{:type => "text/javascript" , :charset => "utf-8"}
+	jQuery(function($) {
+	$('#profilepicture').Jcrop( {
+	onChange: setCoords,
+	onSelect:    setCoords,
+	bgColor:     'black',
+	bgOpacity:   .4,
+	aspectRatio: 250 / 331	
+	});
+	});
+	function setCoords(c) {
+	var rx = 100/c.w;
+	var ry = 100/c.h;
+	var lw = $('#profilepicture').width();
+	var lh = $('#profilepicture').height();
+	= "var ratio = #{ @user.profile_geometry[:width] } / lw ";
+	$("#cx").val(Math.round(c.x * ratio));
+	$("#cy").val(Math.round(c.y * ratio));
+	$("#w").val(Math.round(c.w * ratio));
+	$("#h").val(Math.round(c.h * ratio));
+
+	};
 %p
 	Picture on Profile
 %div{:style => "float:left", :width => "100%", :height => "auto"}
 	=image_tag @user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
-
 
 %p
 	UnCrop photo
@@ -54,3 +75,4 @@
 	=image_tag @user.profilepic_url(:default_photo_limit).to_s, :id => "profilepicture"
 
 %br{:style => "clear:both"}
+
