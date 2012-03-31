@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   end
 
   def profile_geometry
-    img = Magick::Image::read(self.profilepic.current_path).first
+    img = Magick::Image::read(self.profilepic_url).first
     @geometry = {:width => img.columns, :height => img.rows }
   end
 
