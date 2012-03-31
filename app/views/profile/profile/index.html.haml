@@ -41,8 +41,6 @@
 		= submit_tag "Save Information!"
 
 - if @user.profilepic?
-	= stylesheet_link_tag "jcrop/jquery.Jcrop"
-	= javascript_include_tag "jcrop/jquery.Jcrop.min"
 	%script{:type => "text/javascript" , :charset => "utf-8"}
 		jQuery(function($) {
 		$('#profilepicture').Jcrop( {
