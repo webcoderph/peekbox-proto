@@ -8,7 +8,7 @@
 //= require jquery_ujs
 //= require_tree .
 
-//= require uploadify/jquery.uploadify.v2.1.4.min
-//= require uploadify/swfobject.js
-
+//= require profile/zjcrop/jquery.Jcrop.js
+//= require profile/zjcrop/jquery.Jcrop.min.js
+//= require profile/zjcrop/jquery.color.js
 
