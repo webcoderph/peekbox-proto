@@ -13,3 +13,4 @@
 //= require profile/zjcrop/jquery.color.js
 
 //= require jquery_ui/jquery-ui-1.8.18.custom.min.js
+//= require jquery_ui/jquery-ui-timepicker-addon.js
