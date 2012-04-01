@@ -10,7 +10,5 @@
 
 //= require uploadify/jquery.uploadify.v2.1.4.min
 //= require uploadify/swfobject.js
-//= require jcrop/jquery.Jcrop.js
-//= require jcrop/jquery.Jcrop.min.js
 
 
