@@ -12,3 +12,4 @@
 //= require profile/zjcrop/jquery.Jcrop.min.js
 //= require profile/zjcrop/jquery.color.js
 
+//= require jquery_ui/jquery-ui-1.8.18.custom.min.js
