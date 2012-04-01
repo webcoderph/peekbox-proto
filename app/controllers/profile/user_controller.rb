@@ -29,7 +29,6 @@ class Profile::UserController < Profile::ProfileController
 			@user.crop_h = params[:h]
 			@user.crop_w = params[:w]
 		end
-		
 		if @user.save! 
 			redirect_to profile_path, :notice => "Successfully save profile information!"
 		else
