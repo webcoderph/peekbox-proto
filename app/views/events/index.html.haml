@@ -7,16 +7,20 @@
 %div#event_list
 	=@events.each do |event|
 		%div#event_each
-			%p#title
-				=link_to event.title, event_path(event.id)
-			%p#thumb
-				\/*thumb goes here*/
-			%p#description
-				Description:
-				=event.description
-			%p#upload_date
-				Uploaded at:
-				=event.created_at
-	
-
-
+			- if event.image?
+				%div#event-thumbnail
+					= link_to (image_tag event.image_url(:thumb_event).to_s), event_path(event)
+			%div#event-content
+				%h6.event-title
+					=link_to event.title, event_path(event.id)
+				%p#upload_date
+					%span.title
+						Date:
+					=event.created_at
+				%p#location
+					%span.title
+						Location:
+					=event.location
+				%p#description
+					=event.description
+		%br{:style => "clear:both"}
