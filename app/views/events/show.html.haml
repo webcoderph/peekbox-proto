@@ -6,6 +6,8 @@
 	%p
 		= image_tag @event.image_url(:thumb).to_s
 	%p
+		= image_tag @event.image_url(:thumb_event).to_s
+	%p
 		Location:
 		=@event.location
 %p
