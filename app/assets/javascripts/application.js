@@ -14,3 +14,6 @@
 
 //= require jquery_ui/jquery-ui-1.8.18.custom.min.js
 //= require jquery_ui/jquery-ui-timepicker-addon.js
+
+//= require nivo_slider/jquery.nivo.slider.js
+//= require nivo_slider/jquery.nivo.slider.pack.js
