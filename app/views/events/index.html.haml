@@ -18,7 +18,7 @@
 	
 
 %div#event_list
-	=@events.each do |event|
+	-@events.each do |event|
 		%div#event_each
 			- if event.image?
 				%div#event-thumbnail
@@ -35,5 +35,5 @@
 						Location:
 					=event.location
 				%p#description
-					=event.description
+					= truncate(event.description, :length => 600, :omission => "...")
 		%br{:style => "clear:both"}

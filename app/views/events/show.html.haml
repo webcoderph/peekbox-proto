@@ -1,20 +1,17 @@
-%h1
-	=@event.title
--if @event.image?
-	%p
-		= image_tag @event.image_url(:event_page).to_s
-	%p
-		= image_tag @event.image_url(:thumb).to_s
-	%p
-		= image_tag @event.image_url(:thumb_event).to_s
+%div#events-page
+	-if @event.image?
+		%div#event-page-image
+			= image_tag @event.image_url(:event_page).to_s
+	%h1
+		=@event.title
 	%p
 		Location:
 		=@event.location
-%p
 	%p
-		Date:
-		=@event.date
-%p
+		%p
+			Date:
+			=@event.date
 	%p
-		Description:
-		=@event.description
+		%p
+			Description:
+			=@event.description
