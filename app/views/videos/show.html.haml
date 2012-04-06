@@ -6,21 +6,24 @@
 		=@video.title
 	%p
 		= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
-	-if @video.user == current_user
-		%p
-%p
 	%p
-		=@video.description
-%div#video-owner
-	%div#profilepic
-		=image_tag @video.user.profilepic_url(:profile_pic).to_s
-	%div#profile-information
 		%p
-			=@video.created_at
-		%p
-			by
-			=@video.user.username
-		%p
-			Posted in
-			=@video.category.title
-	%br{:style => "clear:both"}
+			=@video.description
+	%div#video-owner
+		%div#profilepic
+			=image_tag @video.user.profilepic_url(:profile_pic).to_s
+		%div#profile-information
+			%p
+				=@video.created_at
+			%p
+				by
+				=@video.user.username
+			%p
+				Posted in
+				=@video.category.title
+		%br{:style => "clear:both"}
+- else
+	%p
+		while we process your video you can check out other Video from our list...
+
+	= link_to "Video Gallery",videos_path
