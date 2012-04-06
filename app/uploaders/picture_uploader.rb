@@ -28,7 +28,7 @@ class PictureUploader < CarrierWave::Uploader::Base
 	end
 
 	version :picture_page do
-		process :resize_to_fill => [640,640]
+		process :resize_to_limit => [640,640]
 	end
 
   # Process files as they are uploaded:

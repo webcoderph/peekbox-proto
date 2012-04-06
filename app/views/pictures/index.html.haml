@@ -1,0 +1,17 @@
+%h1
+	Pictures in "#{@album.title}" Album
+-if @pictures.empty?
+	%p 
+		No Picture Available
+-else
+	-@pictures.each do |pic|
+		%p
+			=pic.title
+		%p
+			=pic.description
+		%p
+			=link_to (image_tag pic.image_url(:picture_thumb).to_s), album_picture_path(pic.album.id, pic.id)
+
+
+	
+	

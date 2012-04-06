@@ -1,0 +1,10 @@
+%div#picture-page
+	-if @picture.image?
+		%div#picture-page-image
+			= image_tag @picture.image_url(:picture_page).to_s
+	%h1
+		=@picture.title
+	%p
+		%p
+			Description:
+			=@picture.description

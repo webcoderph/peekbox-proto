@@ -1,6 +1,5 @@
 Peekbox::Application.routes.draw do
 
-
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
@@ -39,6 +38,7 @@ Peekbox::Application.routes.draw do
 	end
 
 	resources :category, :only => [:show], :path => "/video/category/"
+
 
 
 	get "help" => "static#help"
