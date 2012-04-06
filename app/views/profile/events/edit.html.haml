@@ -1,7 +1,8 @@
-%div{:style => "wdith:100%; margin 0 auto; text-align:center"}
-	%h6
-		Current event banner
-	= image_tag @event.image_url(:event_banner)
+- if @event.image?
+	%div{:style => "wdith:100%; margin 0 auto; text-align:center"}
+		%h6
+			Current event banner
+		= image_tag @event.image_url(:event_banner)
 
 = form_for @event, :url => profile_event_path,  :html => {:multipart => true} do |event| 
 	=render "shared/error_messages", :object => @event
