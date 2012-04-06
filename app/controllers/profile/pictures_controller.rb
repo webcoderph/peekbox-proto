@@ -1,14 +1,18 @@
 class Profile::PicturesController < Profile::ProfileController
   def index
 		@album = Album.find_by_id(params[:album_id])
-		@pictures = @album.pictures
+		if @album.user == current_user
+			@pictures = @album.pictures
+		else
+			@pictures = nil
+		end
   end
 
   def show
   end
 
   def create
-		@album = current_user.albums.find_by_id(params[:album_id])
+		@album = Album.find_by_id(params[:album_id])
 		if !@album.nil?
 			@picture = Picture.new(params[:picture])
 			@picture.user = current_user
