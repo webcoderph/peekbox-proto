@@ -1,11 +1,8 @@
 class Profile::PicturesController < Profile::ProfileController
+
   def index
-		@album = Album.find_by_id(params[:album_id])
-		if @album.user == current_user
-			@pictures = @album.pictures
-		else
-			@pictures = nil
-		end
+		@album = current_user.albums.find(params[:album_id])
+		@pictures = @album.pictures
   end
 
   def show
