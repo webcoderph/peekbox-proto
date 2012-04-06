@@ -7,23 +7,14 @@
 %div
 	=paginate @videos
 %div#video_list
-	=@videos.each do |vid|
-		-if vid.thumbnails.count > 1
-			%div#video_each
-				%p#title
-					=link_to vid.title, video_path(vid.id)
-				%p#thumb
-					%div.thumbnail-wrapper
-						=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
-						%div.video-item-title-wrapper
-							%p.video-item-title
-								=vid.title
-				%p#description
-					Description:
-					=vid.description
-				%p#upload_date
-					Uploaded at:
-					=vid.created_at
+	-@videos.each do |vid|
+		%div#video_each
+			%p#thumb
+				%div.thumbnail-wrapper
+					=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
+					%div.video-item-title-wrapper
+						%p.video-item-title
+							=vid.title
 %div#categories
 	= render :partial => "layouts/sidebar_categories"
 %br{:style=>"clear:both"}
