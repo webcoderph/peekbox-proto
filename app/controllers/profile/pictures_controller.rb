@@ -1,11 +1,7 @@
 class Profile::PicturesController < Profile::ProfileController
   def index
-		@album = Album.find_by_id(params[:album_id])
-		if @album.user == current_user
-			@pictures = @album.pictures.page(params[:page])
-		else
-			redirect_to destroy_user_session_path
-		end
+		@album = current_user.albums.find_by_id(params[:album_id])
+		@pictures = @album.pictures.page(params[:page])
   end
 
   def show
