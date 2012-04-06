@@ -1,0 +1,23 @@
+%div#page-info
+	%span#title
+		Users
+	%span#desc
+		Viewing all users
+%br{:style => "clear:both;"}
+%div
+	=paginate @friends
+%div
+	= render "profile/friends/search_form"
+%div#friend_list
+	-@friends.each do |friend|
+		%div#friend_each
+			%p#thumb
+				%div.thumbnail-wrapper
+					-if friend.profilepic?
+						=image_tag friend.profilepic_url(:profile_pic), :style => "width:114px", :class => "thumbnails" ,:alt => "#{friend.username.to_s}"
+					%div.video-item-title-wrapper
+						%p.video-item-title
+							=friend.username
+
+%br{:style=>"clear:both"}
+

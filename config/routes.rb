@@ -1,5 +1,6 @@
 Peekbox::Application.routes.draw do
 
+
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
@@ -19,6 +20,12 @@ Peekbox::Application.routes.draw do
 		end
 		resources :albums do
 			resources :pictures
+		end
+		resources :friends do
+			collection do
+				get 'search'
+				get 'all'
+			end
 		end
 		resources :events
 		resources :videos
