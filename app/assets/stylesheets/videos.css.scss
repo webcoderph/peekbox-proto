@@ -20,6 +20,9 @@ h1#video-title {
 div#video-owner {
 	#profilepic {
 		float:left;
+		img {
+			width:100px;
+		}
 	}
 	#profile-information{
 		float:left;
