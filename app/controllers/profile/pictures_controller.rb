@@ -2,7 +2,8 @@ class Profile::PicturesController < Profile::ProfileController
   def index
 		@user = current_user
 		@album = @user.albums.find_by_id(params[:album_id])
-		@pictures = Picture.find_by_album_id(@album.id)
+		#@pictures = Picture.find_by_album_id(@album.id)
+		@pictures = nil
   end
 
   def show
