@@ -4,7 +4,7 @@ class Profile::PicturesController < Profile::ProfileController
 		if @album.user == current_user
 			@pictures = @album.pictures.page(params[:page])
 		else
-			redirect_to destroy_user_session
+			redirect_to destroy_user_session_path
 		end
   end
 
