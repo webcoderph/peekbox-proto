@@ -4,19 +4,18 @@
 	%span#desc
 %br{:style => "clear:both;"}
 
+%div
+	=paginate @videos
 %div#video_list
-	=@videos.each do |vid|
+	-@videos.each do |vid|
 		%div#video_each
-			%p#title
-				=link_to vid.title, video_path(vid.id)
 			%p#thumb
-				\/*thumb goes here*/
-			%p#description
-				Description:
-				=vid.description
-			%p#upload_date
-				Uploaded at:
-				=vid.created_at
+				%div.thumbnail-wrapper
+					=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
+					%div.video-item-title-wrapper
+						%p.video-item-title
+							=vid.title
+
 %div#categories
 	= render :partial => "layouts/sidebar_categories"
 %br{:style=>"clear:both"}
