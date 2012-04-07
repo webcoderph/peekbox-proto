@@ -44,6 +44,7 @@ gem 'zencoder'
 gem 'mini_magick'
 gem 'json'
 gem 'kaminari'
+gem 'rails_autolink'
 
 group :development do
 	gem 'heroku-rails'
