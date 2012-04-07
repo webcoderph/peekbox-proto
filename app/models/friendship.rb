@@ -4,6 +4,6 @@ class Friendship < ActiveRecord::Base
 	
 	
 	def search_username(username)
-		self.where("username LIKE ?", "%#{username}%")
+		self.where("username LIKE ? AND user_id != ?", "%#{username}%", "#{self.id}")
 	end
 end

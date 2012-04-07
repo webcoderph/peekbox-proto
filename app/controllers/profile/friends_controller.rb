@@ -4,7 +4,7 @@ class Profile::FriendsController < Profile::ProfileController
   end
 
 	def all
-		@friends = User.order("id")
+		@friends = User.order("id").where("id != ?", "#{current_user.id}")
 		@friends = @friends.page(params[:page])
 	end
 

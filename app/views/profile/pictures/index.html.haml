@@ -5,12 +5,13 @@
 		No Picture Available
 -else
 	-@pictures.each do |pic|
-		%p
-			=pic.title
-		%p
-			=pic.description
-		%p
-			=link_to (image_tag pic.image_url(:picture_thumb).to_s), album_pictures_path(pic.id)
+		%div#each
+			%div.thumbnail-wrapper
+				=link_to (image_tag pic.image_url(:picture_thumb).to_s), album_pictures_path(pic.id)
+				%div#album_title.item-title-wrapper
+					%p.item-title
+						=pic.title	
+%br{:style => "clear:both"}
 
 = form_for :picture, :url => profile_album_pictures_path(@album.id), :html => {:multipart => true} do |picture_form| 
 	%label{:for => "title"} Title:

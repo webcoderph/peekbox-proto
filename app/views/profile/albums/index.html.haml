@@ -5,8 +5,10 @@
 		No Albums Found!
 -else
 	-@albums.each do |album|
-		%div
-			%div#album_cover
+		%div#each
+			%div#album_cover.thumbnail-wrapper
 				=link_to (image_tag album.image_url(:album_thumb).to_s), profile_album_pictures_path(album) 
-			%div#album_title
-				=album.title	
+				%div#album_title.item-title-wrapper
+					%p.item-title
+						=album.title	
+%br{:style => "clear:both;"}

@@ -10,15 +10,15 @@
 	= render "profile/friends/search_form"
 %div#friend_list
 	-@friends.each do |friend|
-		%div#friend_each
+		%div#each
 			%p#thumb
 				%div.thumbnail-wrapper
 					-if friend.profilepic?
-						=image_tag friend.profilepic_url(:profile_pic), :style => "width:114px", :class => "thumbnails" ,:alt => "#{friend.username.to_s}"
+						=image_tag friend.profilepic_url(:profile_pic_thumb), :style => "width:114px", :class => "thumbnails" ,:alt => "#{friend.username.to_s}"
 					- else
-						= image_tag "no-profile-pic.jpg", :style => "width:114px"
-					%div.video-item-title-wrapper
-						%p.video-item-title
+						= image_tag "no-profile-pic.jpg", :style => "height:114px;width:200px;"
+					%div.item-title-wrapper
+						%p.item-title
 							=friend.username
 
 %br{:style=>"clear:both"}
