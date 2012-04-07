@@ -26,3 +26,37 @@ h3{
 div.view-all-link {
 	float:right;
 }
+button.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	padding: 8px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#c9ab34 50%,
+		#57461c 50%,
+		#755b1a 65%,
+		#a38923);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#ffffff),
+		color-stop(0.50, #c9ab34),
+		color-stop(0.50, #57461c),
+		color-stop(0.65, #755b1a),
+		to(#a38923));
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #000000;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(161,142,016,0.6);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(161,142,016,0.6);
+	text-shadow:
+		0px -1px 3px rgba(255,255,255,0.8),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+

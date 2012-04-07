@@ -36,12 +36,12 @@
 		=@user.created_at
 %br{:style=>"clear:both"}
 %div#control-panel
+	%div{:style=>"float:left"}
+		=button_tag "Add Friend", :class => "css3button"
 	%div
-		=link_to "Add Friend"
+		=button_tag "View Friends", :class => "css3button"
 	%div
-		=link_to "Send Message"
-	%div
-		=link_to "View Friends"
+		=button_tag "Send Message", :class => "css3button"
 %br{:style=>"clear:both"}
 %div#videos_list
 	-unless @videos.empty?
