@@ -9,10 +9,11 @@
 -else
 	%div
 		=paginate @albums
-	-@albums.each do |album|
-		%div
-			%div#album_cover
-				=link_to (image_tag album.image_url(:album_thumb).to_s), album_pictures_path(album.id) 
-			%div#album_title
-				=album.title	
-= debug @albums
+		-@albums.each do |album|
+			%div#each
+				%div#album_cover.thumbnail-wrapper
+					=link_to (image_tag album.image_url(:album_thumb).to_s), profile_album_pictures_path(album) 
+					%div#album_title.item-title-wrapper
+						%p.item-title
+							=album.title	
+%br{:style => "clear:both;"}
