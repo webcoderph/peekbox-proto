@@ -15,6 +15,8 @@
 				%div.thumbnail-wrapper
 					-if friend.profilepic?
 						=image_tag friend.profilepic_url(:profile_pic), :style => "width:114px", :class => "thumbnails" ,:alt => "#{friend.username.to_s}"
+					- else
+						= image_tag "no-profile-pic.jpg", :style => "width:114px"
 					%div.video-item-title-wrapper
 						%p.video-item-title
 							=friend.username

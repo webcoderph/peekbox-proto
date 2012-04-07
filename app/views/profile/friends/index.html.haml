@@ -6,8 +6,6 @@
 %br{:style => "clear:both;"}
 %div
 	=paginate @friends
-%div
-	= render "profile/friends/search_form"
 %div#friend_list
 	-@friends.each do |friend|
 		%div#friend_each
