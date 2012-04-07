@@ -8,9 +8,9 @@ class InformationController < ApplicationController
 
   def show
 		@user = User.find_by_username(params[:username])
-		@videos = @user.videos
-		@albums = @user.albums
-		@events = @user.events
+		@videos = @user.videos.for_page
+		@albums = @user.albums.for_page
+		@events = @user.events.for_page
   end
 
 end

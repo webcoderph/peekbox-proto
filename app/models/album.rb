@@ -3,4 +3,5 @@ class Album < ActiveRecord::Base
 	belongs_to :user
 	has_many :pictures
 	mount_uploader :image, ImageUploader
+	scope :for_page, order(:created_at).limit(3).reverse_order
 end

@@ -5,4 +5,5 @@ class Event < ActiveRecord::Base
 	validates_presence_of :user
 	validates_presence_of :title
 	validates_presence_of :description
+	scope :for_page, order(:created_at).limit(3).reverse_order
 end

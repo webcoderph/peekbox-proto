@@ -14,9 +14,9 @@
 			%p#thumb
 				%div.thumbnail-wrapper
 					-if friend.profilepic?
-						=image_tag friend.profilepic_url(:profile_pic_thumb), :style => "width:114px", :class => "thumbnails" ,:alt => "#{friend.username.to_s}"
+						= link_to (image_tag friend.profilepic_url(:profile_pic_thumb), :style => "width:114px", :class => "thumbnails" ,:alt => "#{friend.username.to_s}"), other_user_path(friend.username)
 					- else
-						= image_tag "no-profile-pic.jpg", :style => "height:114px;width:200px;"
+						= link_to (image_tag "no-profile-pic.jpg", :style => "height:114px;width:200px;"), other_user_path(friend.username)
 					%div.item-title-wrapper
 						%p.item-title
 							=friend.username
