@@ -4,6 +4,7 @@
 	%p
 		No Albums Found!
 -else
+	=paginate @albums
 	-@albums.each do |album|
 		%div#each
 			%div#album_cover.thumbnail-wrapper

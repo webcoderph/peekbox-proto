@@ -1,7 +1,7 @@
 class Profile::AlbumsController < Profile::ProfileController 
 
   def index
-		@albums = Album.all
+		@albums = current_user.albums.page(params[:page])
   end
 
 	def create
