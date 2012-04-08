@@ -6,6 +6,11 @@ Peekbox::Application.routes.draw do
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
 
 	get "profile" => "profile/profile#index"
+
+	namespace :admin do
+		resources :ads
+	end
+
 	#Users
 	namespace :profile do
 		resources :user, :only => [:save, :update] do 
