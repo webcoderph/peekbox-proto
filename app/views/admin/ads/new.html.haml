@@ -6,5 +6,5 @@
 	%label{:for => "banner"} Banner Image:
 	= ad.file_field :banner
 	%label{:for => "location"} location:
-	= ad.text_field :location
-	= submit_tag "Add Video"
+	= select(:ads, :location, %w(home videos events user))
+	= submit_tag "Add Ads"
