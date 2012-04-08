@@ -13,4 +13,9 @@ class InformationController < ApplicationController
 		@events = @user.events.for_page
   end
 
+	def friends
+		@user = User.find_by_username(params[:username])
+		@friends = @user.friends.page(params[:page])
+	end
+
 end

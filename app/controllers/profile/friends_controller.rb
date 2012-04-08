@@ -8,6 +8,18 @@ class Profile::FriendsController < Profile::ProfileController
 		@friends = @friends.page(params[:page])
 	end
 
+	def add
+		@user = current_user
+		@friend = User.find(params[:id])
+		if @user.is_stranger(@friend)
+			@friend.friends << @user
+			@user.friends << @friend
+			redirect_to profile_friends_path, :notice => "Successfully added #{@friend.username} as a friend!"
+		else
+			redirect_to profile_friends_path, :error => "unable to add this friend"
+		end
+	end
+
 	def search
 		@friends = Friends.search_username(params[:friend][:username])
 	end

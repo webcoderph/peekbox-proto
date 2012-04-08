@@ -25,6 +25,7 @@ Peekbox::Application.routes.draw do
 			collection do
 				get 'search'
 				get 'all'
+				get 'add', :path => 'add/:id'
 			end
 		end
 		resources :events
@@ -110,5 +111,6 @@ Peekbox::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   match ":username" => "information#show", :as => "other_user"
+  match ":username/friends" => "information#friends", :as => "other_user_friends"
 
 end

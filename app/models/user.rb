@@ -36,6 +36,11 @@ class User < ActiveRecord::Base
     @geometry = {:width => img.columns, :height => img.rows }
   end
 
+	def is_stranger(user) 
+		@friendship = Friendship.where(:user_id => user, :friend_id => self.id).first
+		@friendship.blank?
+	end
+
 	private
   def reprocess_profile
     self.profilepic.recreate_versions!

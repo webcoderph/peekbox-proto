@@ -36,12 +36,18 @@
 		=@user.created_at
 %br{:style=>"clear:both"}
 %div#control-panel
-	%div{:style=>"float:left"}
-		=button_tag "Add Friend", :class => "css3button"
-	%div
-		=button_tag "View Friends", :class => "css3button"
-	%div
-		=button_tag "Send Message", :class => "css3button"
+	- unless current_user == @user
+		%div{:style=>"float:left"}
+			-unless !current_user.is_stranger(@user)
+				=link_to "Add Friend", add_profile_friends_path(@user)
+		%div
+			&nbsp;
+			=link_to "View Friends", other_user_friends_path(@user.username)
+		%div
+			=link_to "Send Message"
+	- else
+		%div
+			=link_to "View Friends", other_user_friends_path(@user.username)
 %br{:style=>"clear:both"}
 %div#videos_list
 	-unless @videos.empty?
