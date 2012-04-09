@@ -38,19 +38,20 @@
 	%div.ads
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 %br{:style=>"clear:both"}
-%div#control-panel
-	- unless current_user == @user
-		%div{:style=>"float:left"}
-			-unless !current_user.is_stranger(@user)
-				=link_to "Add Friend", add_profile_friends_path(@user)
-		%div
-			&nbsp;
-			=link_to "View Friends", other_user_friends_path(@user.username)
-		%div
-			=link_to "Send Message"
-	- else
-		%div
-			=link_to "View Friends", other_user_friends_path(@user.username)
+-unless current_user == nil
+	%div#control-panel
+		- unless current_user == @user
+			%div{:style=>"float:left"}
+				-if current_user.is_stranger(@user)
+					=link_to "Add Friend", add_profile_friends_path(@user)
+			%div
+				&nbsp;
+				=link_to "View Friends", other_user_friends_path(@user.username)
+			%div
+				=link_to "Send Message"
+		- else
+			%div
+				=link_to "View Friends", other_user_friends_path(@user.username)
 %br{:style=>"clear:both"}
 %div#videos_list
 	-unless @videos.empty?
