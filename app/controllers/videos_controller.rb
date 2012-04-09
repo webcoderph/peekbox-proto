@@ -2,6 +2,7 @@ class VideosController < ApplicationController
   def index
 		@videos = Video.processed.page(params[:page])
 		@all_categories = Category.all
+		@ad ||= Ads.find_by_location("videos")
   end
 
   def show

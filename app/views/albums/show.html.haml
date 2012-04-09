@@ -4,8 +4,8 @@
 	= image_tag(@album.image, :width => "640")
 %p
 	%p
-		Description:
-		=@album.location
+		by
+		=@album.user.username
 
 -if current_user == @album.user
 	=current_user.inspect

@@ -4,7 +4,7 @@
 	%span#desc
 		Viewing Events
 =paginate @events
-%div{:style => "width:700px;margin:40px auto;"}
+%div{:style => "width:700px;margin:40px auto;float:left"}
 	%div.slider-wrapper.theme-default
 		%div.ribbon
 		%div#slider.nivoSlider
@@ -15,6 +15,9 @@
 			%strong
 				Events
 	
+- unless @ad == nil
+	%div.ads{:style => "float:right"}
+		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 	
 
 %div#event_list

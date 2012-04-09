@@ -11,6 +11,7 @@ class InformationController < ApplicationController
 		@videos = @user.videos.for_page
 		@albums = @user.albums.for_page
 		@events = @user.events.for_page
+		@ad ||= Ads.find_by_location("user")
   end
 
 	def friends

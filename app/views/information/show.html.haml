@@ -34,6 +34,9 @@
 		%b
 			Date joined:&nbsp;
 		=@user.created_at
+- unless @ad == nil
+	%div.ads
+		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 %br{:style=>"clear:both"}
 %div#control-panel
 	- unless current_user == @user
