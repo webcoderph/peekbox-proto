@@ -6,6 +6,6 @@
 %br{:style => "clear:both;"}
 %div.content
 	&nbsp;
-- unless @ad.empty?
+- unless @ad == nil
 	%div.ads
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
