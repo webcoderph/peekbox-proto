@@ -1,6 +1,6 @@
 =form_for @ads,:url => admin_ads_path, :html => {:multipart => true} do |ad|
-	%label{:for => "name"} Name:
-	= ad.text_field :name
+	%label{:for => "title"} Name:
+	= ad.text_field :title
 	%label{:for => "url"} Url:
 	= ad.text_field :url
 	%label{:for => "banner"} Banner Image:

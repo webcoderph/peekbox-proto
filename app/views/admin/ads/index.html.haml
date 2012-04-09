@@ -1,2 +1,17 @@
-%h1 Admin::Ads#index
-%p Find me in app/views/admin/ads/index.html.haml
+%div#page-info
+	%span#title
+		All Ads
+	%span#desc
+		Viewing Ads
+%br{:style => "clear:both;"}
+%div
+	=paginate @ads
+%div#ads_list
+	-@ads.each do |ads|
+		%div.image
+			=link_to (image_tag ads.banner_url(:banner_ad), :class => "thumbnails" ,:alt => "#{ads.title.to_s}_#{ads.title.to_s}"), admin_ad_path(ads.id)
+		%div.title
+			=ads.title
+		%div.control
+			= link_to "delete",  admin_ad_path(ads.id), :method => :delete 
+%br{:style=>"clear:both"}

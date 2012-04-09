@@ -1,2 +1,14 @@
-%h1 Admin::Ads#show
-%p Find me in app/views/admin/ads/show.html.haml
+%h3
+	Current Banner Image
+=image_tag @ads.banner_url(:banner_ad)
+
+=form_for @ads,:url => admin_ad_path, :html => {:multipart => true} do |ad|
+	%label{:for => "title"} Name:
+	= ad.text_field :title
+	%label{:for => "url"} Url:
+	= ad.text_field :url
+	%label{:for => "banner"} Banner Image:
+	= ad.file_field :banner
+	%label{:for => "location"} location:
+	= select(:ads, :location, %w(home videos events user))
+	= submit_tag "Save Ads"
