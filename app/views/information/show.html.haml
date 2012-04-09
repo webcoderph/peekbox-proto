@@ -17,7 +17,7 @@
 	%div#pb-site.info
 		%b
 			Peekbox site: &nbsp;
-		= "http://#{request.host+request.fullpath}"
+		= auto_link("http://#{request.host+request.fullpath}")
 	%div#sex.info
 		%b
 			Sex:&nbsp;
@@ -29,7 +29,7 @@
 	%div#website.info
 		%b
 			website:&nbsp;
-		=@user.website
+		=auto_link(@user.website)
 	%div#date-joined.info
 		%b
 			Date joined:&nbsp;
