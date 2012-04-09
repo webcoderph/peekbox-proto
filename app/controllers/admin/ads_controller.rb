@@ -30,7 +30,7 @@ class Admin::AdsController < ApplicationController
   end
 
   def update
-		@ad = Ads.find_by_id(params[:ads][:id])
+		@ad = Ads.find(params[:id])
 		@ad.title = params[:ads][:title]
 		@ad.url = params[:ads][:url]
 		@ad.location = params[:ads][:location]
