@@ -4,11 +4,15 @@
 	%span#desc
 		&nbsp;
 %br{:style => "clear:both;"}
-%div.banner{:style => "float:left;"}
-	- unless @banners == nil
-		- @banners.each do |banner|
-			=image_tag banner.image_url(:slide)
+%div{:style => "width:700px;margin:40px auto;float:left"}
+	%div.slider-wrapper.theme-default
+		%div.ribbon
+		%div#slider.nivoSlider
+			-@banners.each do |banner|
+				= image_tag banner.image_url(:slide)
+		%div#htmlcaption.nivo-html-caption
 - unless @ad == nil
 	%div.ads{:style => "float:right;"}
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
+				
 %br{:style => "clear:both;"}
