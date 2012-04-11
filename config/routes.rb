@@ -9,6 +9,7 @@ Peekbox::Application.routes.draw do
 
 	namespace :admin do
 		resources :ads
+		resources :banner
 	end
 
 	#Users

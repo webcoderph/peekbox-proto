@@ -1,13 +1,4 @@
-class Admin::AdsController < ApplicationController
-	before_filter :authenticate_user!
-	before_filter :check_admin!
-
-	def check_admin!
-		unless current_user.admin
-			redirect_to destroy_user_session_url, :method => :delete
-		end
-	end
-
+class Admin::AdsController < Admin::AdminController
   def index
 		@ads = Ads.order("id").reverse_order.page(params[:page])
   end

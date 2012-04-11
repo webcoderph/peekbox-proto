@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
 	has_many :albums
 	has_many :pictures, :through => :albums
 	has_many :comments
+	has_many :banners
 	
 	def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
