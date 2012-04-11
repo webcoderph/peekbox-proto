@@ -4,8 +4,10 @@
 	%span#desc
 		&nbsp;
 %br{:style => "clear:both;"}
-%div.content
-	&nbsp;
+%div.banner{:style => "float:left;"}
+	- unless @banners == nil
+		- @banners.each do |banner|
+			=image_tag banner.image_url(:slide)
 - unless @ad == nil
 	%div.ads{:style => "float:right;"}
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
