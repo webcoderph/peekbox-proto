@@ -11,6 +11,7 @@ class Video < ActiveRecord::Base
 	validates_presence_of :media
 
 	scope :processed, where(:processed => true)
+	scope :featured, processed.where(:featured => true)
 	scope :for_page, order(:created_at).limit(3).reverse_order
 
 	def processed!

@@ -20,6 +20,7 @@ class Profile::VideosController < Profile::ProfileController
 		@video.title = params[:video][:title]
 		@video.description = params[:video][:description]
 		@video.category = Category.find_by_id(params[:video][:category_id])
+		@video.featured = params[:video][:featured]
 		if @video.save! 
 			redirect_to profile_videos_path, :notice => "Successfully updated a video!"
 		else

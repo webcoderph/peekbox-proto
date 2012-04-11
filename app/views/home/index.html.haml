@@ -14,5 +14,15 @@
 - unless @ad == nil
 	%div.ads{:style => "float:right;"}
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
+
+%div#video_list
+	-@videos.each do |vid|
+		%div#video_each
+			%p#thumb
+				%div.thumbnail-wrapper
+					=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
+					%div.video-item-title-wrapper
+						%p.video-item-title
+							=vid.title
 				
 %br{:style => "clear:both;"}

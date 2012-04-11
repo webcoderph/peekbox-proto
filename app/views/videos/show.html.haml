@@ -7,6 +7,8 @@
 	%p
 		= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
 	%p
+		-if current_user.admin
+			=link_to "Edit", edit_profile_video_path(@video.id)
 		%p
 			=@video.description
 	%div#video-owner
