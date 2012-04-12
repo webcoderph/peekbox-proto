@@ -34,7 +34,11 @@ class Profile::EventsController < Profile::ProfileController
 	end
 
 	def edit
-		@event = current_user.events.find_by_id(params[:id])
+		unless current_user.admin
+			@event = current_user.events.find_by_id(params[:id])
+		else
+			@event = Event.find_by_id(params[:id])
+		end
 	end
 
 end
