@@ -4,5 +4,8 @@
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 %br{:style => "clear:both"}
 =render "featured_list"
-=paginate @events
+%div#events-pagination
+	=paginate @events
 =render "non_featured"
+%div#events-pagination
+	=paginate @events
