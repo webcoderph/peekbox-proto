@@ -10,7 +10,7 @@
 	%div
 		=paginate @albums
 		-@albums.each do |album|
-			%div#each
+			%div#album-each
 				%div#album_cover.thumbnail-wrapper
 					=link_to (image_tag album.image_url(:album_thumb).to_s), album_pictures_path(album) 
 					%div#album_title.item-title-wrapper
