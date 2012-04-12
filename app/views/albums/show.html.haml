@@ -1,11 +1,10 @@
-%h1
-	=@album.title
-%p
-	= image_tag(@album.image, :width => "640")
-%p
-	%p
-		by
-		=@album.user.username
-
--if current_user == @album.user
-	=current_user.inspect
+%div#albums-page
+	-if @album.image?
+		%div#album-page-image
+			= image_tag @album.image_url(:album_cover)
+	%h1
+		=@album.title
+	-unless current_user== nil
+		-if current_user.admin
+			%div
+				=link_to "Edit", edit_profile_album_path(@album.id)

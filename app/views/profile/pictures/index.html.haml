@@ -1,5 +1,9 @@
 %h1
 	Pictures in "#{@album.title}" Album
+-unless current_user== nil
+	-if current_user.admin
+		%div
+			=link_to "Edit #{@album.title}", edit_profile_album_path(@album.id)
 -if @pictures.empty?
 	%p 
 		No Picture Available
