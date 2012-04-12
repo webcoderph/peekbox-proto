@@ -23,10 +23,10 @@
 						= link_to 'Register', new_user_registration_path
 		%div#menu_wide
 			%div#menu
+				%div#logo{:style => "float:left"}
+					=link_to (image_tag "logo.png"), root_path
 				#links-container
 					= render :partial => "layouts/menu"
-				#search-container
-					= render :partial => "layouts/search"
 		#container_wide
 			#container
 				%div#flash
@@ -34,6 +34,7 @@
 						= notice
 					%span.alert
 						= alert
+				%br{:style => "clear:both;"}
 				= yield
 		= render :partial => "layouts/twitter"
 		= render :partial => "layouts/footer"

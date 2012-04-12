@@ -4,6 +4,9 @@
 			= image_tag @event.image_url(:event_page).to_s
 	%h1
 		=@event.title
+	-if current_user.admin
+		%div
+			=link_to "Edit", edit_profile_event_path(@event.id)
 	%p
 		Location:
 		=@event.location

@@ -27,4 +27,9 @@
 	%br
 	= event.text_area :description
 	%br
+	-if current_user.admin
+		%label{:for => "featured"} Feature:
+		%br
+		= event.check_box :featured
+		%br
 	= submit_tag "Save"

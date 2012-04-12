@@ -1,43 +1,8 @@
-%div#page-info
-	%span#title
-		All Events
-	%span#desc
-		Viewing Events
-=paginate @events
-%div{:style => "width:700px;margin:40px auto;float:left"}
-	%div.slider-wrapper.theme-default
-		%div.ribbon
-		%div#slider.nivoSlider
-			-@events.each do |eventslide|
-				-if eventslide.image?
-					= image_tag eventslide.image_url(:event_banner).to_s
-		%div#htmlcaption.nivo-html-caption
-			%strong
-				Events
-	
+=render "slideshow"
 - unless @ad == nil
-	%div.ads{:style => "float:right"}
+	%div.ads
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
-	
-
 %br{:style => "clear:both"}
-%div#event_list
-	-@events.each do |event|
-		%div#event_each
-			- if event.image?
-				%div#event-thumbnail
-					= link_to (image_tag event.image_url(:thumb_event).to_s), event_path(event)
-			%div#event-content
-				%h6.event-title
-					=link_to event.title, event_path(event.id)
-				%p#upload_date
-					%span.title
-						Date:
-					=event.created_at
-				%p#location
-					%span.title
-						Location:
-					=event.location
-				%p#description
-					= truncate(event.description, :length => 600, :omission => "...")
-		%br{:style => "clear:both"}
+=render "featured_list"
+=paginate @events
+=render "non_featured"

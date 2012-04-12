@@ -116,9 +116,42 @@ div#menu_wide {
 	}
 }
 
+div#each{
+	float:left;
+	padding-right:12px;
+	.thumbnail-wrapper {
+		width:200px;
+		height:114px;
+		position:relative;
+		p.item-description {
+			font-size: 10px;
+			margin-top: 1px;
+		}
+		.item-title-wrapper {
+			position:absolute;
+			bottom:0;
+			width:100%;
+			vertical-align:baseline;
+			p.item-title {
+				border: 1px solid #999;
+				padding: 5px 0px 5px 7px;
+				background: #333;
+				color: white;
+				width: 191px;
+				font-size: 11px;
+				display: block;
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+
 #wrapper {
 	#container {
 		@include wrapper-container;
+		.ads {
+			float:right;
+		}
 		#flash {
 			width:100%;
 			margin-top:20px;
@@ -142,6 +175,7 @@ div#menu_wide {
 		}
 	}
 	#twitter-wrapper {
+		margin-top: 50px;
 		background: #f2f1f1;
 		height: 80px;
 		width: 100%;

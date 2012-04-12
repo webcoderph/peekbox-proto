@@ -44,6 +44,10 @@ class EventUploader < CarrierWave::Uploader::Base
      process :resize_to_fill => [250, 331]
    end
 
+   version :not_featured do
+     process :resize_to_fill => [125, 170]
+   end
+
    version :event_page do
      process :resize_to_limit => [640,640]
    end

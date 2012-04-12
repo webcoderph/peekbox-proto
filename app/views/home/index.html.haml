@@ -1,28 +1,20 @@
-%div#page-info
-	%span#title
-		&nbsp;
-	%span#desc
-		&nbsp;
-%br{:style => "clear:both;"}
-%div{:style => "width:700px;margin:40px auto;float:left"}
-	%div.slider-wrapper.theme-default
-		%div.ribbon
-		%div#slider.nivoSlider
-			-@banners.each do |banner|
-				= image_tag banner.image_url(:slide)
-		%div#htmlcaption.nivo-html-caption
+=render "slide_banner"
 - unless @ad == nil
 	%div.ads{:style => "float:right;"}
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 
-%div#video_list
-	-@videos.each do |vid|
-		%div#video_each
-			%p#thumb
-				%div.thumbnail-wrapper
-					=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
-					%div.video-item-title-wrapper
-						%p.video-item-title
-							=vid.title
-				
+%h3
+	Recently Uploaded Videos
+%div#thumb_list
+	=render "recent_videos"
+%br{:style => "clear:both;"}
+%h3
+	Video Picks
+%div#thumb_list
+	=render "featured_videos"
+%br{:style => "clear:both;"}
+%h3
+	Featured Events
+%div#thumb_list
+	=render "featured_events"
 %br{:style => "clear:both;"}

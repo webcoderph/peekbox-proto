@@ -1,0 +1,16 @@
+%div#page-info
+	%span#title
+		All Events
+	%span#desc
+		Viewing Events
+%div{:style => "width:700px;margin:40px auto;float:left"}
+	%div.slider-wrapper.theme-default
+		%div.ribbon
+		%div#slider.nivoSlider
+			-@featured_events.each do |eventslide|
+				-if eventslide.image?
+					= image_tag eventslide.image_url(:event_banner).to_s
+		%div#htmlcaption.nivo-html-caption
+			%strong
+				Events
+	
