@@ -3,9 +3,13 @@
 	%div.ads
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 %br{:style => "clear:both"}
+%h3
+	Featured Events
 =render "featured_list"
 %div#events-pagination
 	=paginate @events
+%h3
+	Recently Added Events
 =render "non_featured"
 %div#events-pagination
 	=paginate @events

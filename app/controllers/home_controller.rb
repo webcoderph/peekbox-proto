@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+		@all_categories = Category.all
 		@banners = Banner.all
 		@featured_videos = Video.featured.limit(3)
 		@latest_videos = Video.for_page

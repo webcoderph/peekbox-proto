@@ -1,6 +1,6 @@
 %div#page-info
 	%span#title
-		All Albums
+		All Gallery
 	%span#desc
 		Viewing Users Gallery
 -if @albums.empty?
@@ -9,6 +9,7 @@
 -else
 	%div
 		=paginate @albums
+	%div#albums
 		-@albums.each do |album|
 			%div#album-each
 				%div#album_cover.thumbnail-wrapper
@@ -16,4 +17,7 @@
 					%div#album_title.item-title-wrapper
 						%p.item-title
 							=album.title	
+- unless @ad == nil
+	%div.ads{:style => "float:right;"}
+		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 %br{:style => "clear:both;"}

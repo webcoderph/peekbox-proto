@@ -10,5 +10,5 @@
 	%label{:for => "banner"} Banner Image:
 	= ad.file_field :banner
 	%label{:for => "location"} location:
-	= select(:ads, :location, %w(home videos events user))
+	= select(:ads, :location, %w(home videos events albums album user))
 	= submit_tag "Save Ads"
