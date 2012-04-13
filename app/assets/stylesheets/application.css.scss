@@ -77,6 +77,9 @@ div#menu_wide {
 					float:left;
 					padding:20px 10px 20px 10px;
 					list-style:none;
+					a {
+						text-decoration:none;
+					}
 				}
 			}
 		}
