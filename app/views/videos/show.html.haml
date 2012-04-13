@@ -7,10 +7,11 @@
 	%p
 		= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
 	%p
-		-if current_user.admin
-			=link_to "Edit", edit_profile_video_path(@video.id)
-		%p
-			=@video.description
+		-unless current_user == nil
+			-if current_user.admin
+				=link_to "Edit", edit_profile_video_path(@video.id)
+			%p
+				=@video.description
 	%div#video-owner
 		%div#profilepic
 			=image_tag @video.user.profilepic_url(:profile_pic).to_s
