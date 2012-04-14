@@ -5,6 +5,7 @@ class Video < ActiveRecord::Base
 	has_many :thumbnails
 	mount_uploader :media, MediaUploader
 	attr_accessible :media
+	paginates_per 21
 
 	validates_presence_of :category
 	validates_presence_of :user
