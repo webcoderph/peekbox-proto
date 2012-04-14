@@ -1,0 +1,3 @@
+=form_for :comment, :url => profile_video_comments_path(@video.id), :method => :post do |comment|
+	=comment.text_area :text
+	=submit_tag "comment"
