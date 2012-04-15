@@ -6,4 +6,5 @@ class Album < ActiveRecord::Base
 	scope :for_page, order(:created_at).limit(3).reverse_order
 	scope :featured, where(:featured => true)
 	scope :non_featured, where(:featured => false)
+	paginates_per 21
 end
