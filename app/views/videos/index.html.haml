@@ -14,11 +14,10 @@
 						=vid.title
 				%p.item-description
 					= truncate(vid.description, :length => 30, :omission =>"...")
-%div
-	=paginate @videos
 %div#categories
 	- unless @ad == nil
 		%div.ads{:style => "float:right"}
 			=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 	= render :partial => "layouts/sidebar_categories"
+=paginate @videos
 %br{:style=>"clear:both"}
