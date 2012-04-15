@@ -6,7 +6,7 @@
 %br{:style => "clear:both;"}
 %div#video_list
 	-@videos.each do |vid|
-		%div#each
+		%div#video_each
 			%div.thumbnail-wrapper
 				=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
 				%div.item-title-wrapper
