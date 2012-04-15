@@ -20,3 +20,5 @@ $j ->
 			this.src = currentVideo
 			this.play()
 			playCount++
+
+switchTo5x = true

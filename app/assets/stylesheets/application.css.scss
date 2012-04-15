@@ -334,3 +334,30 @@ div#each{
 	}
 }
 
+input{
+  -moz-border-radius: 8px;
+  -moz-transition: background 1.2s ease-in;
+  -ms-transition: background 1.2s ease-in;
+  -o-transition: background 1.2s ease-in;
+  -webkit-border-radius: 8px;
+  -webkit-box-shadow: #6E7849 0 0 10px;
+  -webkit-transition: background 1.2s ease-in;
+  background-color: #aaaaaa;
+  background-image: -moz-linear-gradient(90deg, #000000, #aaaaaa);
+  background-image: -ms-linear-gradient(90deg, #000000, #aaaaaa);
+  background-image: -o-linear-gradient(90deg, #000000, #aaaaaa);
+  background-image: -webkit-linear-gradient(90deg, #000000, #aaaaaa);
+  background-image: linear-gradient(90deg, #000000, #aaaaaa);
+  border-radius: 8px;
+  border: 1px solid #000000;
+  color: #ffffff;
+  display: inline-block;
+  margin: 10px 0px 10px 0px;
+  padding: 8px;
+  text-decoration: none;
+}
+p.time-ago {
+	font-style:italic;
+	color: #00bbbb;
+	font-size:10px
+}
