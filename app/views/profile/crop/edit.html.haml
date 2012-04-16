@@ -21,17 +21,11 @@
 		$("#h").val(Math.round(c.h * ratio));
 
 		};
-	%div{:style => "float:left;width:100%"}
-		%div{:style => "float:left", :width => "700px", :height => "auto"}
+	%div{:style => "width:100%"}
+		%div{:width => "700px", :height => "auto"}
 			%h6
 				Crop Profile Tool
 			=image_tag @user.profilepic_url(:default_photo_limit).to_s, :id => "profilepicture"
-
-		%div{:style => "float:right", :width => "700px", :height => "auto"}
-			%h6
-				Current Profile Picture
-			=image_tag @user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
-
 		%br{:style => "clear:both"}
 
 

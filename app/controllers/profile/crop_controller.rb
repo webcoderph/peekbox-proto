@@ -1,4 +1,4 @@
-class Profile::CropController < ApplicationController
+class Profile::CropController < Profile::ProfileController
   def edit
 		@user = User.find_by_id(params[:id])
 		if @user.profilepic == nil
