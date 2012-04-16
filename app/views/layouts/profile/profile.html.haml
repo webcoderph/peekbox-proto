@@ -29,8 +29,14 @@
 					= render :partial => "layouts/search"
 		#container_wide
 			#container
+				%div#page-info
+					%h2
+						Welcome 
+						=link_to current_user.username, other_user_path(current_user.username)
+					%h2
+						Peekbox User Dashboard 
+				%br{:style => "clear:both"}
 				%div#dashboard
-					= render :partial => "layouts/profile_menu"
 				%div#flash
 					%span.notice
 						= notice

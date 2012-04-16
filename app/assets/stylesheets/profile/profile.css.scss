@@ -3,13 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 div#dashboard {
-	li.item {
-		padding:5px;
-		list-style:none;
+	#avatar{
 		float:left;
-		li.item {
-			clear:both;
+	}
+	div.link {
+		margin:0px;
+		padding:10px 20px 10px 10px;
+		height:80px;
+		float:left;
+		ul.link {
+			padding-left:15px;
+			li.item {
+				list-style:disc;
+			}
 		}
 	}
-
 }
