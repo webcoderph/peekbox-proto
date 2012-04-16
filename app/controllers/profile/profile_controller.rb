@@ -7,7 +7,7 @@ class Profile::ProfileController < ApplicationController
 	end
 
 	def banned_user!
-		unless current_user.banned == false
+		if current_user.banned == false
 			redirect_to destroy_user_session_path, :method => :delete
 		end
 	end
