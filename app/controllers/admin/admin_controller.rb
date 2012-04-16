@@ -10,8 +10,8 @@ class Admin::AdminController < ApplicationController
 	end
 
 	def banned_user!
-		unless current_user.banned == true
-			redirect_to destroy_user_session_url, :method => :delete, :alert => "YOU ARE BANNED!"
+		unless current_user.banned == false
+			redirect_to destroy_user_session_url, :method => :delete
 		end
 
 	end

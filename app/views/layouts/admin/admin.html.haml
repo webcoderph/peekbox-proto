@@ -29,14 +29,24 @@
 					= render :partial => "layouts/search"
 		#container_wide
 			#container
+				%div#page-info
+					%h2
+						Welcome 
+						=link_to current_user.username, other_user_path(current_user.username)
+					%h2
+						Peekbox User Dashboard 
+				%br{:style => "clear:both"}
+				=render "layouts/profile/profile_menu"
+				-unless current_user.admin == false
+					=render "layouts/profile/administrator_menu"
 				%div#dashboard
-					= render :partial => "layouts/profile_menu"
 				%div#flash
 					%span.notice
 						= notice
 					%span.alert
 						= alert
 				= yield
+				%br{:style => "clear:both"}
 		= render :partial => "layouts/twitter"
 		= render :partial => "layouts/footer"
 		= render :partial => "layouts/bottom"

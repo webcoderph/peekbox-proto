@@ -36,6 +36,9 @@
 					%h2
 						Peekbox User Dashboard 
 				%br{:style => "clear:both"}
+				=render "layouts/profile/profile_menu"
+				-unless current_user.admin == false
+					=render "layouts/profile/administrator_menu"
 				%div#dashboard
 				%div#flash
 					%span.notice
@@ -43,6 +46,7 @@
 					%span.alert
 						= alert
 				= yield
+				%br{:style => "clear:both"}
 		= render :partial => "layouts/twitter"
 		= render :partial => "layouts/footer"
 		= render :partial => "layouts/bottom"

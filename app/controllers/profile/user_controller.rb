@@ -23,14 +23,8 @@ class Profile::UserController < Profile::ProfileController
 		@user.website = params[:user][:website]
 		@user.profilepic = params[:user][:profilepic]
 
-		if params[:cx].to_i > 1
-			@user.crop_x = params[:cx]
-			@user.crop_y = params[:cy]
-			@user.crop_h = params[:h]
-			@user.crop_w = params[:w]
-		end
 		if @user.save! 
-			redirect_to profile_path, :notice => "Successfully save profile information!"
+			redirect_to edit_profile_crop_path(@user), :notice => "Successfully save profile information!"
 		else
 			render :action => "index"
 		end

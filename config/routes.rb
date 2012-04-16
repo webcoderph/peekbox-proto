@@ -13,6 +13,8 @@ Peekbox::Application.routes.draw do
 
 	#Users
 	namespace :profile do
+		resources :information
+		resources :crop
 		resources :user, :only => [:save, :update] do 
 			collection do
 				post "save"

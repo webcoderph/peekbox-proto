@@ -3,7 +3,7 @@
 		%h3
 			Avatar Image:
 		%div
-			=image_tag @user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
+			=image_tag current_user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
 
 	%div.link
 		Videos
@@ -36,15 +36,21 @@
 			%li.item
 				= link_to 'Sent' 
 	%div.link
+		Friends
+		%ul.link
+			%li.item
+				= link_to 'Friends', profile_friends_path
+			%li.item
+				= link_to 'Search Friend', all_profile_friends_path
+	%div.link
 		Profile
 		%ul.link
 			%li.item
-				= link_to 'Change Information' 
-			%li.item
-				= link_to 'Change Password' 
+				= link_to 'Change Information', edit_profile_information_path(current_user)
 			%li.item
 				= link_to 'Profile Page', other_user_path(current_user.username)
 			%li.item
-				= link_to 'Crop Profile Picture', other_user_path(current_user.username)
+				= link_to 'Crop Profile Picture', edit_profile_crop_path(current_user.id)
 
 	%br{:style=>"clear:both"}
+%br{:style=>"clear:both"}
