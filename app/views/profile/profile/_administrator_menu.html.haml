@@ -1,0 +1,45 @@
+-if current_user.admin?
+	%div#page-info{:style => "height:60px;margin-top:20px"}
+		%h2
+			Peekbox Admin Dashboard
+	%div#dashboard{:style => "margin-top:20px"}
+		%div.link
+			Sponsored Ads
+			%ul.link
+				%li.item
+					= link_to 'Ads' , admin_ads_path
+				%li.item
+					= link_to 'Add Ads' , new_admin_ad_path
+		%div.link
+			Homepage Banner
+			%ul.link
+				%li.item
+					= link_to 'Banner' , admin_banner_index_path
+				%li.item
+					= link_to 'Add Banner' , new_admin_banner_path
+		%div.link
+			User Management
+			%ul.link
+				%li.item
+					= link_to 'Ban User' , admin_banner_index_path
+				%li.item
+					= link_to 'View Users' , new_admin_banner_path
+		%div.link
+			Campaigns
+			%ul.link
+				%li.item
+					= link_to 'Add Contest' , admin_banner_index_path
+				%li.item
+					= link_to 'View Submitted Videos' , new_admin_banner_path
+				%li.item
+					= link_to 'Eligibility Code List' , new_admin_banner_path
+				%li.item
+					= link_to 'Import Eligibility Code' , new_admin_banner_path
+				%li.item
+					= link_to 'Featured Event List' , new_admin_banner_path
+				%li.item
+					= link_to 'Special Event List' , new_admin_banner_path
+				%li.item
+					= link_to 'Featured Video List' , new_admin_banner_path
+				%li.item
+					= link_to 'Featured Album List' , new_admin_banner_path
