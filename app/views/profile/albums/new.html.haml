@@ -3,6 +3,10 @@
 	%br
 	= album.text_field :title
 	%br
+	%label{:for => "description"} Description:
+	%br
+	= album.text_area :description
+	%br
 	%label{:for => "image"} Album Cover:
 	= album.file_field :image
 	%br

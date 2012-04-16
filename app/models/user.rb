@@ -21,11 +21,11 @@ class User < ActiveRecord::Base
 	#has_many :requested_friends, :through => :friendships, :source => :friend, :conditions => "status = 'requested'", :order => :created_at
 	#has_many :pending_friends, :through => :friendships, :source => :friend, :conditions => "status = 'pending'", :order => :created_at
 	#has_many :friends, :through => :friendships, :condition => "status = 'accepted'"
-	has_many :events
-	has_many :videos
-	has_many :albums
+	has_many :events, :dependent => :delete_all
+	has_many :videos, :dependent => :delete_all
+	has_many :albums, :dependent => :delete_all
 	has_many :pictures, :through => :albums
-	has_many :comments
+	has_many :comments, :dependent => :delete_all
 	has_many :banners
 	
 	def cropping?

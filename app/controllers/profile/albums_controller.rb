@@ -7,7 +7,7 @@ class Profile::AlbumsController < Profile::ProfileController
 	def create
 		@album = Album.new
 		@album.title = params[:album][:title]
-		@album.location = params[:album][:location]
+		@album.description = params[:album][:description]
 		@album.image = params[:album][:image]
 		@album.user = current_user
 		if @album.save! 
@@ -24,7 +24,7 @@ class Profile::AlbumsController < Profile::ProfileController
 	def update
 		@album = Album.find_by_id(params[:id])
 		@album.title = params[:album][:title]
-		@album.location = params[:album][:location]
+		@album.description = params[:album][:description]
 		@album.image = params[:album][:image]
 		@album.featured = params[:album][:featured]
 		if @album.save!
