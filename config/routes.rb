@@ -1,5 +1,6 @@
 Peekbox::Application.routes.draw do
 
+
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
@@ -7,6 +8,13 @@ Peekbox::Application.routes.draw do
 	get "profile" => "profile/profile#index"
 
 	namespace :admin do
+		resources :feature, :only => [:index] do
+			collection do
+				get "events"
+				get "videos"
+				get "albums"
+			end
+		end
 		resources :video_ads
 		resources :ads
 		resources :banner

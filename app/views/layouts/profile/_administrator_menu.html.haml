@@ -4,6 +4,17 @@
 			Peekbox Admin Dashboard
 	%div#dashboard{:style => "margin-top:20px"}
 		%div.link
+			Featured
+			%ul.link
+				%li.item
+					= link_to 'Featured Event List' , events_admin_feature_index_path
+				%li.item
+					= link_to 'Special Event List' 
+				%li.item
+					= link_to 'Featured Video List' , videos_admin_feature_index_path
+				%li.item
+					= link_to 'Featured Album List' , albums_admin_feature_index_path
+		%div.link
 			Sponsored Ads
 			%ul.link
 				%li.item
@@ -39,12 +50,4 @@
 					= link_to 'Eligibility Code List' , new_admin_banner_path
 				%li.item
 					= link_to 'Import Eligibility Code' , new_admin_banner_path
-				%li.item
-					= link_to 'Featured Event List' , new_admin_banner_path
-				%li.item
-					= link_to 'Special Event List' , new_admin_banner_path
-				%li.item
-					= link_to 'Featured Video List' , new_admin_banner_path
-				%li.item
-					= link_to 'Featured Album List' , new_admin_banner_path
 		%br{:style=>"clear:both"}
