@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416164851) do
+ActiveRecord::Schema.define(:version => 20120417173501) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -140,6 +140,17 @@ ActiveRecord::Schema.define(:version => 20120416164851) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "video_ads", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "media"
+    t.string   "zencoder_output_id"
+    t.string   "thumbnail"
+    t.boolean  "processed",          :default => false
+  end
 
   create_table "videos", :force => true do |t|
     t.string   "title"

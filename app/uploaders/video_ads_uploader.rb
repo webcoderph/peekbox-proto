@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class MediaUploader < CarrierWave::Uploader::Base
+class VideoAdsUploader < CarrierWave::Uploader::Base
 	include Rails.application.routes.url_helpers
 
 	Rails.application.routes.default_url_options = ActionMailer::Base.default_url_options
@@ -41,25 +41,28 @@ class MediaUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process :scale => [50, 50]
   # end
+	def extension_white_list
+	 %w(mp4 flv ogv avi)
+	end
+
+	def filename
+	 "videoAds.mp4" if original_filename
+	end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-   def extension_white_list
-     %w(mp4 flv ogv avi)
-   end
+  # def extension_white_list
+  #   %w(jpg jpeg gif png)
+  # end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-   def filename
-     "video.mp4" if original_filename
-   end
-	
 	private
 	def zencode(args)
-		zencoder_response = Zencoder::Job.create({:input => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}/video.mp4",
+		zencoder_response = Zencoder::Job.create({:input => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}/videoAds.mp4",
 																							:outputs => [{:base_url => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{@model.id}",
-																														 :filename => "video.mp4",
-																														 :label => "web",
+																														 :filename => "videoAds.mp4",
+																														 :label => "ads",
 																														 :notifications => [zencoder_callback_url(:protocol => "http", :host => ENV['URL'], :port => ENV['PORT'])],
 																														 :video_codec => "h264",
 																														 :audio_codec => "aac",
@@ -80,11 +83,12 @@ class MediaUploader < CarrierWave::Uploader::Base
 
 
 		zencoder_response.body["outputs"].each do |output|
-      if output["label"] == "web"
+      if output["label"] == "ads"
         @model.zencoder_output_id = output["id"]
         @model.processed = false
         @model.save(:validate => false)
       end
     end
   end
+
 end

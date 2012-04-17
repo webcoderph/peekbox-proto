@@ -7,6 +7,7 @@ Peekbox::Application.routes.draw do
 	get "profile" => "profile/profile#index"
 
 	namespace :admin do
+		resources :video_ads
 		resources :ads
 		resources :banner
 		resources :user do

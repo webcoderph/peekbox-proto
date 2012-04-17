@@ -7,7 +7,10 @@
 		%h1#video-title
 			=@video.title
 		%p
-			= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
+			-if @videoAd != nil 
+				= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element", :ads => @videoAd.media)
+			-else
+				= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
 		%p
 		%div#sharethis
 			%span.st_facebook_hcount{:displayText => "Facebook"}

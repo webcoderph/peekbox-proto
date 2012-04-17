@@ -6,6 +6,9 @@ class VideosController < ApplicationController
   end
 
   def show
+		rand_id = rand(VideoAd.count)
+		rand_record = VideoAd.processed.first(:offset => rand_id)
+		@videoAd ||= rand_record
 		@video = Video.find_by_id(params[:id])
 		@all_categories = Category.all
 		if !@video.processed?
