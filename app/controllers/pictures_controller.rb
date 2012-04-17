@@ -7,6 +7,7 @@ class PicturesController < ApplicationController
   end
 
   def show
-		@picture = Picture.find_by_id(params[:id])
+		@album = Album.find_by_id(params[:album_id])
+		@pictures = @album.pictures.page(params[:page]).per(1)
   end
 end

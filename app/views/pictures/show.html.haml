@@ -1,10 +1,12 @@
-%div#picture-page
-	-if @picture.image?
-		%div#picture-page-image
-			= image_tag @picture.image_url(:picture_page).to_s
-	%h1
-		=@picture.title
-	%p
+-@pictures.each do |pic|
+	%div#picture-page
+		-if pic.image?
+			%div#picture-page-image
+				= image_tag pic.image_url(:picture_page).to_s
+		%h1
+			=pic.title
 		%p
-			Description:
-			=@picture.description
+			%p
+				Description:
+				=pic.description
+=paginate @pictures
