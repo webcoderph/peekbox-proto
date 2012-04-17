@@ -13,8 +13,7 @@
 				%div#sign_status
 					-if user_signed_in?
 						%p
-							Welcome 
-							= link_to current_user.username , profile_path
+							= link_to 'Dashboard' , profile_path
 							|	
 							= link_to 'Sign out', destroy_user_session_path, :method => :delete
 					-else

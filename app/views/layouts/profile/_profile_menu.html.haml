@@ -1,9 +1,10 @@
 %div#dashboard
 	%div#avatar
-		%h3
-			Avatar Image:
-		%div
-			=image_tag current_user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
+		-if current_user.profilepic == nil
+			%h3
+				Avatar Image:
+			%div
+				=image_tag current_user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
 
 	%div.link
 		Videos

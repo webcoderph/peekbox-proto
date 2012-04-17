@@ -1,6 +1,7 @@
-%h1#video-category
-	=@video.category.title
-%div#show-video-page-info
+%div#page-info
+	%span#title
+		=@video.category.title
+	%span#desc
 -if @video.processed?
 	%div#video-show-page
 		%h1#video-title
