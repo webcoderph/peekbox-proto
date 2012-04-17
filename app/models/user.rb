@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 	attr_accessor :crop_x, :crop_y, :crop_h, :crop_w
 
 	scope :is_admin, where(:admin => true)
+	scope :not_admin, where(:admin => false)
 
 	validates	 :username, :uniqueness => true, :presence => true
 

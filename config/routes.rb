@@ -9,6 +9,11 @@ Peekbox::Application.routes.draw do
 	namespace :admin do
 		resources :ads
 		resources :banner
+		resources :user do
+			collection do
+				post "ban"
+			end
+		end
 	end
 
 	#Users
