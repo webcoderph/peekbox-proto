@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 
 	validates	 :username, :uniqueness => true, :presence => true
 
+	has_many :wall_post
 	has_many :friends, :through => :friendships
 	has_many :friendships, :dependent => :destroy
 	#has_many :friends, :through => :friendships, :conditions => "status = 'accepted'"

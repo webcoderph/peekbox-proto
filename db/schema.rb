@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417173501) do
+ActiveRecord::Schema.define(:version => 20120418154318) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -164,5 +164,15 @@ ActiveRecord::Schema.define(:version => 20120417173501) do
     t.boolean  "processed"
     t.boolean  "featured",           :default => false
   end
+
+  create_table "wall_posts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "poster_id"
+    t.string   "post"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wall_posts", ["user_id"], :name => "index_wall_posts_on_user_id"
 
 end
