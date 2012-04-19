@@ -2,3 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+$ -> 
+	$("#media-btn").bind 'click', -> 
+		$("#user-page-wall-post").hide()	
+		$("#user-page-media").show()	
+		$("#media-btn").addClass('user-page-selected')
+		$("#wall-btn").removeClass('user-page-selected')
+
+	$("#wall-btn").bind 'click', -> 
+		$("#user-page-wall-post").show()	
+		$("#user-page-media").hide()
+		$("#wall-btn").addClass('user-page-selected')
+		$("#media-btn").removeClass('user-page-selected')

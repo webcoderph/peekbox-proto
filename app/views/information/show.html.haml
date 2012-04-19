@@ -1,56 +1,17 @@
-%div#pic
-	%div#profile_pic
-		-if @user.profilepic?
-			= image_tag @user.profilepic_url(:profile_pic)
-		-else
-			= image_tag "no-profile-pic.jpg" , :style => "height:331px;width:250px;"
-
-%div#information
-	%div#shoutout.info
-		%b
-			Shoutout: &nbsp;
-		=@user.shoutout
-	%div#name.info
-		%h3
-			=@user.first_name
-			=@user.last_name
-	%div#pb-site.info
-		%b
-			Peekbox site: &nbsp;
-		= auto_link("http://#{request.host+request.fullpath}")
-	%div#sex.info
-		%b
-			Sex:&nbsp;
-		=@user.sex
-	%div#location.info
-		%b
-			location:&nbsp;
-		=@user.location
-	%div#website.info
-		%b
-			website:&nbsp;
-		=auto_link(@user.website)
-	%div#date-joined.info
-		%b
-			Date joined:&nbsp;
-		=@user.created_at
+=render "pic"
+=render "data"
 - unless @ad == nil
 	%div.ads
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
-%br{:style=>"clear:both"}
--unless current_user == nil
-	%div#control-panel
-		- unless current_user == @user
-			%div{:style=>"float:left"}
-				-if current_user.is_stranger(@user)
-					=link_to "Add Friend", add_profile_friends_path(@user)
-			%div
-				&nbsp;
-				=link_to "View Friends", other_user_friends_path(@user.username)
-			%div
-				=link_to "Send Message"
-		- else
-			%div
-				=link_to "View Friends", other_user_friends_path(@user.username)
-=render "wall_post"
-=render "items"
+=render "controls"
+%div#user-page-content
+	%div#user-page-control
+		%a{:id => "media-btn", :class => "userpage-btn user-page-selected"}
+			Media
+		%a{:id => "wall-btn", :class => "userpage-btn"}
+			Wall
+	%div#user-page-data
+		%div#user-page-wall-post
+			=render "wall_post"
+		%div#user-page-media
+			=render "items"

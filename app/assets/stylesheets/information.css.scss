@@ -61,12 +61,10 @@ button.css3button {
 }
 
 #wall{
-	width:700px;	
 	.post {
 		#wall-post {
 			padding:10px;
 			margin-bottom:10px;
-			width:700px;	
 			background:#fff;
 			-webkit-border-radius: 10px;
 			-moz-border-radius: 10px;
@@ -86,6 +84,48 @@ button.css3button {
 		}
 	}
 }
+#user-page-content{
+	margin:15px 0px 10px 0px;
+	width:700px;
+	#user-page-control {
+		a.userpage-btn {
 
+			-moz-border-radius-topleft: 3px;
+			-moz-border-radius-topright: 10px;
+			-moz-border-radius-bottomright: 10px;
+			-moz-border-radius-bottomleft: 10px;
+			-webkit-border-radius: 3px 10px 10px 10px;
+			border-radius: 3px 10px 10px 10px;
+        
+        
+			cursor:pointer;
+			padding:12px 20px 20px 20px;
+		}
+		a.user-page-selected {
+			background:#d5cfa7;
+		}
+	}
+	#user-page-data {
+		/*border*/
+		-moz-border-radius-topleft: 0px;
+		-moz-border-radius-topright: 10px;
+		-moz-border-radius-bottomright: 0px;
+		-moz-border-radius-bottomleft: 0px;
+		-webkit-border-radius: 0px 10px 0px 0px;
+		border-radius: 0px 10px 0px 0px;
 
+		background: -moz-linear-gradient(top,  rgba(213,206,166,1) 0%, rgba(201,193,144,0.6) 40%, rgba(183,173,112,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(213,206,166,1)), color-stop(40%,rgba(201,193,144,0.6)), color-stop(100%,rgba(183,173,112,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(213,206,166,1) 0%,rgba(201,193,144,0.6) 40%,rgba(183,173,112,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(213,206,166,1) 0%,rgba(201,193,144,0.6) 40%,rgba(183,173,112,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(213,206,166,1) 0%,rgba(201,193,144,0.6) 40%,rgba(183,173,112,0) 100%); /* IE10+ */
+		background: linear-gradient(top,  rgba(213,206,166,1) 0%,rgba(201,193,144,0.6) 40%,rgba(183,173,112,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5cea6', endColorstr='#00b7ad70',GradientType=0 ); /* IE6-9 */
+
+		padding:10px;
+		#user-page-wall-post {
+			display:none;
+		}
+	}
+}
 
