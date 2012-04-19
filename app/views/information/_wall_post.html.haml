@@ -24,7 +24,6 @@
 %h3
 	Leave a Reply
 %br{:style => "clear:both"}
-%br{:style => "clear:both"}
 =form_for :wall_post, :url => profile_user_wall_post_index_path(@user), :method => :post do |wall_post|
 	=wall_post.text_area :post
 	%br

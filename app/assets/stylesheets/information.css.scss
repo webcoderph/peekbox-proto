@@ -60,3 +60,32 @@ button.css3button {
 		0px 1px 0px rgba(255,255,255,0.3);
 }
 
+#wall{
+	width:700px;	
+	.post {
+		#wall-post {
+			padding:10px;
+			margin-bottom:10px;
+			width:700px;	
+			background:#fff;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+    
+			#wall-poster-pic {
+				float:left;
+			}	
+			#wall-post-body {
+				padding-left:20px;
+				float:left;
+				p {
+					margin: 0px;
+					
+				}
+			}
+		}
+	}
+}
+
+
+
