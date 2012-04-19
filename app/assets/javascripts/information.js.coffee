@@ -5,12 +5,12 @@
 $ -> 
 	$("#media-btn").bind 'click', -> 
 		$("#user-page-wall-post").hide()	
-		$("#user-page-media").show()	
+		$("#user-page-media").slideDown('slow')
 		$("#media-btn").addClass('user-page-selected')
 		$("#wall-btn").removeClass('user-page-selected')
 
 	$("#wall-btn").bind 'click', -> 
-		$("#user-page-wall-post").show()	
+		$("#user-page-wall-post").slideDown('slow')	
 		$("#user-page-media").hide()
 		$("#wall-btn").addClass('user-page-selected')
 		$("#media-btn").removeClass('user-page-selected')
