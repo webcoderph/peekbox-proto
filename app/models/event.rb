@@ -7,5 +7,6 @@ class Event < ActiveRecord::Base
 	validates_presence_of :description
 	scope :for_page, order(:created_at).limit(3).reverse_order
 	scope :featured, where(:featured => true)
-	scope :non_featured, where(:featured => false)
+	scope :special, where(:featured => false, :special => true)
+	scope :non_featured, where(:featured => false, :special => false)
 end

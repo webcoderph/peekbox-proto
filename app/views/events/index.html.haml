@@ -3,9 +3,7 @@
 	%div.ads{:style => "margin:40px 0 0 0;"}
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 %br{:style => "clear:both"}
-%h3
-	Featured Events
-=render "featured_list"
+=render "special_list"
 %div#events-pagination
 	=paginate @events
 %h3

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120418154318) do
+ActiveRecord::Schema.define(:version => 20120420160556) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20120418154318) do
     t.integer  "user_id"
     t.string   "image"
     t.boolean  "featured",    :default => false
+    t.boolean  "special",     :default => false
   end
 
   create_table "friendships", :force => true do |t|

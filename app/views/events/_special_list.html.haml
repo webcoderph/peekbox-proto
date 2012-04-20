@@ -1,5 +1,5 @@
 %div#event_list
-	-@featured_events.limit(1).each do |event|
+	-@special_events.limit(1).each do |event|
 		%div#event_each
 			- if event.image?
 				%div#event-thumbnail

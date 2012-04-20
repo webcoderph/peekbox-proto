@@ -9,7 +9,7 @@
 				%li.item
 					= link_to 'Featured Event List' , events_admin_feature_index_path
 				%li.item
-					= link_to 'Special Event List' 
+					= link_to 'Special Event List', special_admin_feature_index_path 
 				%li.item
 					= link_to 'Featured Video List' , videos_admin_feature_index_path
 				%li.item
@@ -26,12 +26,16 @@
 				%li.item
 					= link_to 'Add Video Ads' , new_admin_video_ad_path
 		%div.link
-			Homepage Banner
+			Banners
 			%ul.link
 				%li.item
-					= link_to 'Banner' , admin_banner_index_path
+					= link_to 'Home Banner' , admin_banner_index_path
 				%li.item
-					= link_to 'Add Banner' , new_admin_banner_path
+					= link_to 'Add Home Banner' , new_admin_banner_path
+				%li.item
+					= link_to 'Event Banner' , admin_eventbanner_index_path
+				%li.item
+					= link_to 'Add Event Banner' , new_admin_eventbanner_path
 		%div.link
 			User Management
 			%ul.link
