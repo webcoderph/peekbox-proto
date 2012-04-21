@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
 	scope :is_admin, where(:admin => true)
 	scope :not_admin, where(:admin => false)
+	scope :ban_list, where(:banned => true)
 
 	validates	 :username, :uniqueness => true, :presence => true
 

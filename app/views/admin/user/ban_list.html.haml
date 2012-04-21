@@ -1,8 +1,8 @@
 %div#page-info
 	%span#title
-		All Users
+		Banned Users
 	%span#desc
-		Viewing Users
+		Viewing Banned Users
 %br{:style => "clear:both;"}
 %div
 	=paginate @users
@@ -20,6 +20,5 @@
 							%div.item-title-wrapper
 								%p.item-title
 									=user.username
-							-unless user.banned?
-								= link_to "ban",  ban_admin_user_index_path(user.id)
+							= link_to "unban",  unban_admin_user_index_path(user.id)
 %br{:style=>"clear:both"}

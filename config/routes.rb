@@ -21,7 +21,9 @@ Peekbox::Application.routes.draw do
 		resources :banner
 		resources :user do
 			collection do
-				post "ban"
+				get "ban"
+				get "unban"
+				get "ban_list"
 			end
 		end
 	end
