@@ -5,6 +5,8 @@
 			%div{:style=>"float:left"}
 				-if current_user.is_stranger(@user)
 					=link_to "Add Friend", add_profile_friends_path(@user)
+				-else
+					=link_to "UnFriend", profile_friend_path(@user), :method => :delete
 			%div
 				&nbsp;
 				=link_to "View Friends", other_user_friends_path(@user.username)

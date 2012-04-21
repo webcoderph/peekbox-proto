@@ -34,6 +34,14 @@ class Profile::FriendsController < Profile::ProfileController
   end
 
   def destroy
+		@friendship = Friendship.where(:friend_id => params[:id], :user_id => current_user.id)
+		@friendship2 = Friendship.where(:user_id => params[:id], :friend_id => current_user.id)
+		@friend = User.find(params[:id])
+		if @friendship.destroy_all and @friendship2.destroy_all
+			redirect_to profile_friends_path, :notice => "Successfully unfriend #{@friend.username}!"
+		else
+			redirect_to profile_friends_path, :error => "unable to unfriend this friend"
+		end
   end
 
   def update
