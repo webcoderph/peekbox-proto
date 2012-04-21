@@ -26,6 +26,7 @@ class Profile::EventsController < Profile::ProfileController
 		@event.location = params[:event][:location]
 		@event.image = params[:event][:image]
 		@event.featured = params[:event][:featured]
+		@event.special = params[:event][:special]
 		if @event.save!
 			redirect_to @event, :notice => "Successfully updated an Event!"	
 		else
