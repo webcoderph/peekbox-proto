@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-		@featured_events = Event.featured.order("updated_at")
+		@featured_events = EventBanner.order("updated_at")
 		@special_events = Event.special.order("updated_at")
 		@events = Event.non_featured.order("created_at").page(params[:page])
 		@ad ||= Ads.find_by_location("events")

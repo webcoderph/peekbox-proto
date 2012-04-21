@@ -1,17 +1,4 @@
 Peekbox::Application.routes.draw do
-
-  get "event_banner/create"
-
-  get "event_banner/index"
-
-  get "event_banner/edit"
-
-  get "event_banner/new"
-
-  get "event_banner/show"
-
-  get "event_banner/destroy"
-
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
@@ -29,7 +16,7 @@ Peekbox::Application.routes.draw do
 		end
 		resources :video_ads
 		resources :ads
-		resources :eventbanner
+		resources :event_banner
 		resources :banner
 		resources :user do
 			collection do

@@ -1,2 +1,6 @@
-%h1 Admin::EventBanner#new
-%p Find me in app/views/admin/event_banner/new.html.haml
+=form_for @banner, :url => admin_event_banner_index_path do |banner|
+	%label{:for => "image"} Banner Image:
+	%br
+	= banner.file_field :image
+	%br
+	= submit_tag "Add Banner"

@@ -9,7 +9,7 @@
 		%div#slider.nivoSlider
 			-@featured_events.each do |eventslide|
 				-if eventslide.image?
-					= image_tag eventslide.image_url(:event_banner).to_s
+					= image_tag eventslide.image_url(:slide).to_s
 		%div#htmlcaption.nivo-html-caption
 			%strong
 				Events
