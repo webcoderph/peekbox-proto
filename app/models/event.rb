@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :user
+  has_many :bookmarks
 	mount_uploader :image, EventUploader
 
 	validates_presence_of :user

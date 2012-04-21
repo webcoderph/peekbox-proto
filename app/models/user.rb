@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
 	validates	 :username, :uniqueness => true, :presence => true
 
 	has_many :wall_post
+	has_many :peekme, :through => :bookmarks
+	has_many :bookmarks, :dependent => :destroy
 	has_many :friends, :through => :friendships
 	has_many :friendships, :dependent => :destroy
 	#has_many :friends, :through => :friendships, :conditions => "status = 'accepted'"
@@ -42,6 +44,11 @@ class User < ActiveRecord::Base
 	def is_stranger(user) 
 		@friendship = Friendship.where(:user_id => user, :friend_id => self.id).first
 		@friendship.blank?
+	end
+
+	def is_bookmarked(event) 
+		@bookmarked = Bookmark.where(:user_id => self.id, :event_id => event.id).first
+		@bookmarked.blank?
 	end
 
 	private

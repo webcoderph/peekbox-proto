@@ -1,4 +1,5 @@
 Peekbox::Application.routes.draw do
+
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
@@ -27,6 +28,11 @@ Peekbox::Application.routes.draw do
 
 	#Users
 	namespace :profile do
+		resources :bookmark, :only => [:index, :create, :destroy] do
+			collection do
+				post "unbookmark"
+			end
+		end
 		resources :information
 		resources :crop
 		resources :user, :only => [:save, :update] do 
