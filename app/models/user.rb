@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 	validates	 :username, :uniqueness => true, :presence => true
 
 	has_many :wall_post
+	has_many :messages
 	has_many :peekme, :through => :bookmarks
 	has_many :bookmarks, :dependent => :destroy
 	has_many :friends, :through => :friendships

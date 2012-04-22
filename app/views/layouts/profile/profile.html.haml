@@ -5,7 +5,7 @@
 	= stylesheet_link_tag "application"
 	= javascript_include_tag "application"
 	= csrf_meta_tags
-	%link{:rel => "shortcut icon", :href => "assets/pb/favicon.jpg"}
+	%link{:rel => "shortcut icon", :href => "pb/favicon.jpg"}
 %body
 	%div#wrapper
 		%div#header
@@ -22,12 +22,13 @@
 						= link_to 'Register', new_user_registration_path
 		%div#menu_wide
 			%div#menu
+				%div#logo{:style => "float:left"}
+					=link_to (image_tag "logo.png"), root_path
 				#links-container
 					= render :partial => "layouts/menu"
-				#search-container
-					= render :partial => "layouts/search"
 		#container_wide
 			#container
+				%br{:style => "clear:both"}
 				%div#page-info
 					%h2
 						Welcome 

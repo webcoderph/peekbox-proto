@@ -1,5 +1,6 @@
 Peekbox::Application.routes.draw do
 
+
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
@@ -60,6 +61,14 @@ Peekbox::Application.routes.draw do
 				get 'search'
 				get 'all'
 				get 'add', :path => 'add/:id'
+			end
+		end
+		resources :messages do
+			collection do
+				get "inbox"
+				post "send_message"
+				get "sent"
+				get "compose"
 			end
 		end
 		resources :events
