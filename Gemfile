@@ -45,6 +45,7 @@ gem 'mini_magick'
 gem 'json'
 gem 'kaminari'
 gem 'rails_autolink'
+gem 'flash_cookie_session'
 
 group :development do
 	gem 'heroku-rails'

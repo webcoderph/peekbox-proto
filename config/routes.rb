@@ -49,7 +49,11 @@ Peekbox::Application.routes.draw do
 			end
 		end
 		resources :albums do
-			resources :pictures
+			resources :pictures do 
+				collection do
+					post 'multiupload'
+				end
+			end
 		end
 		resources :friends do
 			collection do

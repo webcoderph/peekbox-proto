@@ -5,6 +5,22 @@ class Profile::PicturesController < Profile::ProfileController
 		@pictures = @album.pictures
   end
 
+	def multiupload
+		@album = Album.find_by_id(params[:album_id])
+		if !@album.nil?
+			@picture = Picture.new(params[:picture])
+			@picture.user = current_user
+			@picture.album = @album
+			if @picture.save!
+				render :nothing => true
+			else
+				render :nothing => true
+			end
+		else
+			render :action => "index"
+		end
+	end
+
   def show
   end
 

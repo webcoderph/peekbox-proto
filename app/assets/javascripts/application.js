@@ -17,3 +17,5 @@
 
 //= require nivo_slider/jquery.nivo.slider.js
 //= require nivo_slider/jquery.nivo.slider.pack.js
+
+//= require uploadify/jquery.uploadify.js
