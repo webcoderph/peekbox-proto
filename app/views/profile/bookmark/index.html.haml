@@ -1,10 +1,13 @@
-%h1
-	Events
+%div#page-info
+	%span#title
+		My peek
+	%span#desc
 -if @user_events.empty?
 	%p
 		No Events Found!
 -else
 %div#event_list
+	%br{:style => "clear:both"}
 	-@user_events.each do |event|
 		%div#event_each
 			- if event.image?
