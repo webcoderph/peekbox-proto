@@ -4,7 +4,7 @@
 			- if event.image?
 				%div#event-thumbnail
 					= link_to (image_tag event.image_url(:thumb_event).to_s), event_path(event)
-			%div#event-content
+			%div#event-content{:style => "width:355px"}
 				%h6.event-title
 					=link_to event.title, event_path(event.id)
 				%p#upload_date
@@ -16,5 +16,5 @@
 						Location:
 					=event.location
 				%p#description
-					= truncate(event.description, :length => 600, :omission => "...")
+					= truncate(event.description, :length => 400, :omission => "...")
 		%br{:style => "clear:both"}
