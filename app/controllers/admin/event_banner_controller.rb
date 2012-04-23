@@ -25,7 +25,8 @@ class Admin::EventBannerController < Admin::AdminController
   end
 
   def destroy
-		if @banner.destroy!
+		@banner = EventBanner.find(params[:id])
+		if @banner.destroy
 			redirect_to admin_event_banner_index_path, :notice => "Successfully deleted an Event Banner"
 		else
 			redirect_to admin_event_banner_index_path, :alert => "Error deleting an Event Banner"
