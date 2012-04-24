@@ -95,6 +95,7 @@ Peekbox::Application.routes.draw do
 	get "help" => "static#help"
 
 	get "company" => "static#company"
+	post "contact" => "static#contact"
 
 
   # The priority is based upon order of creation:
