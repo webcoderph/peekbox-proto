@@ -6,7 +6,7 @@
 					= link_to (image_tag event.image_url(:not_featured).to_s), event_path(event)
 					-unless current_user == nil
 						-if current_user.is_bookmarked(event)
-							= button_to "Peek me", :controller => "profile/bookmark", :method => "post", :event => event.id
+							= button_to "My Peek", :controller => "profile/bookmark", :method => "post", :event => event.id
 						-else
 							= button_to "unPeek me", :controller => "profile/bookmark", :action => "unbookmark",  :id => event.id
 			%div#event-content

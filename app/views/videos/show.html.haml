@@ -1,11 +1,12 @@
 %div#page-info
 	%span#title
-		=@video.category.title
+		=@video.title
 	%span#desc
+		Viewing 
+		=@video.category.title
+		videos
 -if @video.processed?
 	%div#video-show-page
-		%h1#video-title
-			=@video.title
 		%p
 			-if @videoAd != nil 
 				= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element", :ads => @videoAd.media)
