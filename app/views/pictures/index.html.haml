@@ -4,9 +4,10 @@
 	%span#desc
 		Viewing Album
 %br{:style => "clear:both;"}
-	-if current_user.admin
-		%div
-			=link_to "Admin Edit", edit_profile_album_path(@album.id)
+	-unless current_user == nil
+		-if current_user.admin
+			%div
+				=link_to "Admin Edit", edit_profile_album_path(@album.id)
 %br{:style => "clear:both;"}
 %div#albums-page
 	-if @album.image?

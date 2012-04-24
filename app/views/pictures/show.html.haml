@@ -1,12 +1,16 @@
 -@pictures.each do |pic|
+	%div#page-info
+		%span#title
+			=pic.title
+		%span#desc
+	%br{:style => "clear:both"}
 	%div#picture-page
 		-if pic.image?
 			%div#picture-page-image
 				= image_tag pic.image_url(:picture_page).to_s
-		%h1
-			=pic.title
 		%p
 			%p
 				Description:
+			%p
 				=pic.description
 =paginate @pictures
