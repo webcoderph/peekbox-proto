@@ -1,3 +1,7 @@
+-if @user.banned
+	%h1
+		BANNED USER
+	%br{:style => "clear:both"}
 =render "pic"
 =render "data"
 - unless @ad == nil
