@@ -1,20 +1,5 @@
 Peekbox::Application.routes.draw do
 
-
-  get "contests/index"
-
-  get "contests/new"
-
-  get "contests/create"
-
-  get "contests/update"
-
-  get "contests/edit"
-
-  get "contests/destroy"
-
-  get "contests/show"
-
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
@@ -23,6 +8,7 @@ Peekbox::Application.routes.draw do
 
 	namespace :admin do
 		resources :contests
+		resources :eligibilities
 		resources :feature, :only => [:index] do
 			collection do
 				get "events"

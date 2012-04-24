@@ -37,6 +37,15 @@ class Profile::VideosController < Profile::ProfileController
 		@video.contest = Contest.find(params[:video][:contest_id])
 		@video.media = params[:video][:media]
 		@video.user = current_user
+
+		code = params[:video][:eligibility_code]
+		@eligible = EligibilityCode.find_by_code(code)
+		unless @eligible == nil
+			@video.eligibility_code = @eligible
+			@eligible.taken = true
+			@eligible.save!
+		end
+
 		if @video.save! 
 			redirect_to @video, :notice => "Successfully uploaded a video!"
 		else

@@ -1,0 +1,26 @@
+%div#page-info
+	%span#title
+		Eligibility Code
+	%span#desc
+%br{:style => "clear:both"}
+%div#ads_list
+	%table
+		%tr
+			%th
+				Code
+			%th
+				Taken
+			%th
+				Video
+		-@eligibles.each do |eligible|
+			%tr
+				%td
+					=eligible.code
+				%td
+					=eligible.taken
+				%td
+					-unless eligible.video == nil
+						=link_to "#{eligible.video.category.title}:#{eligible.video.title}", video_path(eligible.video)
+		
+			
+=paginate @eligibles
