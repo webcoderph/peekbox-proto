@@ -1,0 +1,16 @@
+%div
+	=paginate @contests
+%div#ads_list
+	%table
+		%tr
+			%th
+				Title
+			%th
+				Created at
+			-@contests.each do |contest|
+				%tr
+					%td	
+						=link_to contest.title, admin_contest_path(contest)
+					%td	
+						=contest.created_at
+%br{:style=>"clear:both"}

@@ -1,6 +1,7 @@
 class Video < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :category
+	belongs_to :contest
 	has_many :comments
 	has_many :thumbnails
 	mount_uploader :media, MediaUploader

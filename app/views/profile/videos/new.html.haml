@@ -7,6 +7,10 @@
 	%br
 	= collection_select(:video, :category_id, @all_category, :id, :title)
 	%br
+	%label{:for => "contest"} Contest:
+	%br
+	= collection_select(:video, :contest_id, @contests, :id, :title)
+	%br
 	%label{:for => "Description"} Description:
 	%br
 	= video_form.text_area :description

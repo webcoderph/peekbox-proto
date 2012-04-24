@@ -6,6 +6,7 @@ class Profile::VideosController < Profile::ProfileController
 	end
 
 	def new
+		@contests = Contest.all
 		@all_category = Category.all
 		@video = Video.new
 	end
@@ -33,6 +34,7 @@ class Profile::VideosController < Profile::ProfileController
 		@video.title = params[:video][:title]
 		@video.description = params[:video][:description]
 		@video.category = Category.find_by_id(params[:video][:category_id])
+		@video.contest = Contest.find(params[:video][:contest_id])
 		@video.media = params[:video][:media]
 		@video.user = current_user
 		if @video.save! 

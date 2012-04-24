@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120422195724) do
+ActiveRecord::Schema.define(:version => 20120424085312) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -72,6 +72,19 @@ ActiveRecord::Schema.define(:version => 20120422195724) do
     t.datetime "updated_at"
     t.integer  "video_id"
     t.integer  "user_id"
+  end
+
+  create_table "contests", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "eligibilities", :force => true do |t|
+    t.string   "code"
+    t.boolean  "taken",      :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "event_banners", :force => true do |t|
@@ -191,6 +204,7 @@ ActiveRecord::Schema.define(:version => 20120422195724) do
     t.string   "zencoder_output_id"
     t.boolean  "processed"
     t.boolean  "featured",           :default => false
+    t.integer  "contest_id"
   end
 
   create_table "wall_posts", :force => true do |t|
