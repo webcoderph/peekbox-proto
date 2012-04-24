@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120424113710) do
+ActiveRecord::Schema.define(:version => 20120424163554) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20120424113710) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "enable",     :default => true
   end
 
   create_table "eligibilities", :force => true do |t|

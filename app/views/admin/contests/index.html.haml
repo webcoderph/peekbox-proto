@@ -7,10 +7,17 @@
 				Title
 			%th
 				Created at
+			%th
 			-@contests.each do |contest|
 				%tr
 					%td	
 						=link_to contest.title, admin_contest_path(contest)
 					%td	
 						=contest.created_at
+					%td	
+						-if contest.enable
+							=link_to "disable", change_status_admin_contest_path(contest)
+						-else 
+							=link_to "enable", change_status_admin_contest_path(contest)
+				
 %br{:style=>"clear:both"}

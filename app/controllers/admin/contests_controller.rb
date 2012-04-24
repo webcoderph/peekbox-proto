@@ -39,4 +39,18 @@ class Admin::ContestsController < Admin::AdminController
 		@videos = @contest.videos.page(params[:page])
   end
 
+	def change_status
+		@contest = Contest.find(params[:id])
+		if @contest.enable == true
+			@contest.enable = false	
+		else
+			@contest.enable = true
+		end
+	
+		if @contest.save
+			redirect_to admin_contests_path, :notice => "Successfully updated a contest"
+		else
+			redirect_to admin_contests_path, :notice => "Error updating a contest"
+		end
+	end
 end

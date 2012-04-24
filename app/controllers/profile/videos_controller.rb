@@ -6,7 +6,7 @@ class Profile::VideosController < Profile::ProfileController
 	end
 
 	def new
-		@contests = Contest.all
+		@contests = Contest.enabled
 		@all_category = Category.all
 		@video = Video.new
 	end

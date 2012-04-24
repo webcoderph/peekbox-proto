@@ -7,7 +7,11 @@ Peekbox::Application.routes.draw do
 	get "profile" => "profile/profile#index"
 
 	namespace :admin do
-		resources :contests
+		resources :contests do
+			member do
+				get "change_status"
+			end
+		end
 		resources :eligibilities
 		resources :feature, :only => [:index] do
 			collection do
