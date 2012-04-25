@@ -9,6 +9,7 @@
 							= button_to "My Peek", :controller => "profile/bookmark", :method => "post", :event => event.id
 						-else
 							= button_to "unPeek me", :controller => "profile/bookmark", :action => "unbookmark",  :id => event.id
+					%br{:style => "clear:both"}
 			%div#event-content
 				%h6.event-title
 					=link_to event.title, event_path(event.id)

@@ -39,6 +39,31 @@
 	text-align: center;
 }
 
+#event_each {
+	#event-thumbnail {
+		input {
+			padding-top:0px;
+			height:15px;
+		}
+	}
+	#event-content {
+		p#location {
+			margin-top:8px;
+			margin-bottom:8px;
+		}
+		p#upload_date {
+			margin-bottom:8px;
+		}
+		p#description {
+			margin-top:8px;
+			margin-bottom:8px;
+			font-weight:lighter;
+			font-size:13px;
+		}
+	}
+
+}
+
 #event-page {
 	width: 700px;
 }
