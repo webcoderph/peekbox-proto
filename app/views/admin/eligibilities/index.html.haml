@@ -12,15 +12,25 @@
 				Taken
 			%th
 				Video
+			%th
+				Username
+			%th
+				Email
 		-@eligibles.each do |eligible|
 			%tr
 				%td
 					=eligible.code
 				%td
 					=eligible.taken
-				%td
-					-unless eligible.video == nil
+				-unless eligible.video == nil
+					%td
 						=link_to "#{eligible.video.category.title}:#{eligible.video.title}", video_path(eligible.video)
+					%td
+						=link_to "#{eligible.video.user.username}", other_user_path(eligible.video.user.username)
+					%td
+						=link_to "#{eligible.video.user.email}", other_user_path(eligible.video.user.username)
+					%td
+						=eligible.updated_at
 		
 			
 =paginate @eligibles

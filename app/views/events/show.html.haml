@@ -7,6 +7,12 @@
 	-if @event.image?
 		%div#event-page-image
 			= image_tag @event.image_url(:event_page).to_s
+		-unless current_user == nil
+			%div{:style=>"text-align:right;margin-right:160px"}
+				-if current_user.is_bookmarked(@event)
+					= button_to "My Peek", :controller => "profile/bookmark", :method => "post", :event => @event.id
+				-else
+					= button_to "unPeek me", :controller => "profile/bookmark", :action => "unbookmark",  :id => @event.id
 	-unless current_user== nil
 		-if current_user.admin
 			%div

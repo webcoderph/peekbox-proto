@@ -8,6 +8,7 @@
 	%div.ads
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 =render "controls"
+%br{:style => "clear:both"}
 %div#user-page-content
 	%div#user-page-control
 		%a{:id => "media-btn", :class => "userpage-btn user-page-selected"}
