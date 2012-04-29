@@ -1,5 +1,4 @@
 Peekbox::Application.routes.draw do
-
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
@@ -7,6 +6,7 @@ Peekbox::Application.routes.draw do
 	get "profile" => "profile/profile#index"
 
 	namespace :admin do
+		resources :categories, :only => [:index, :new, :create, :edit, :update] 
 		resources :contests do
 			member do
 				get "change_status"
