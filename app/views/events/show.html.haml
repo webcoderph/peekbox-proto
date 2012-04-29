@@ -15,7 +15,7 @@
 				%span.st_sharethis_hcount{:displayText => "shareThis"}
 			-unless current_user == nil
 				-if current_user.is_bookmarked(@event)
-					= button_to "My Peek", {:controller => "profile/bookmark", :method => "post", :event => @event.id}, {:style => "float:right;margin::0px -10px 0px 0px;padding-top:3px;"}
+					= button_to "My Peek", {:controller => "profile/bookmark", :method => "post", :event => @event.id}, {:style => "float:right;margin:0px -10px 0px 0px;padding-top:3px;"}
 				-else
 					= button_to "unPeek me", {:controller => "profile/bookmark", :action => "unbookmark",  :id => @event.id}, {:style => "float:right;margin:0px -10px 0px 0px;padding-top:3px"}
 			%div{:style => "float:right"}
