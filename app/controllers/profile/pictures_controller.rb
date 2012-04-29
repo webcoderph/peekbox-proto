@@ -5,6 +5,11 @@ class Profile::PicturesController < Profile::ProfileController
 		@pictures = @album.pictures
   end
 
+  def edit
+		@album = current_user.albums.find(params[:album_id])
+		@picture = Picture.find(params[:id])
+  end
+
 	def multiupload
 		@album = Album.find_by_id(params[:album_id])
 		if !@album.nil?
