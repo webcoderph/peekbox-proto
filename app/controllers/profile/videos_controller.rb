@@ -34,7 +34,9 @@ class Profile::VideosController < Profile::ProfileController
 		@video.title = params[:video][:title]
 		@video.description = params[:video][:description]
 		@video.category = Category.find_by_id(params[:video][:category_id])
-		@video.contest = Contest.find(params[:video][:contest_id])
+		unless params[:video][:contest_id] == ""
+			@video.contest = Contest.find(params[:video][:contest_id])
+		end
 		@video.media = params[:video][:media]
 		@video.user = current_user
 

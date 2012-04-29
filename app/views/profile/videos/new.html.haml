@@ -11,7 +11,7 @@
 	%span.optional
 		(optional)
 	%br
-	= collection_select(:video, :contest_id, @contests, :id, :title)
+	= collection_select(:video, :contest_id, @contests, :id, :title, {:include_blank => "Join A Contest"})
 	%br
 	%label{:for => "eligibility_code"} Eligibility Code:
 	%span.optional
