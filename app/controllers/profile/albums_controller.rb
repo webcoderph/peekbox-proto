@@ -11,7 +11,7 @@ class Profile::AlbumsController < Profile::ProfileController
 		@album.image = params[:album][:image]
 		@album.user = current_user
 		if @album.save! 
-			redirect_to new_profile_album_picture_path(@album), :notice => "Successfully added an Album!"
+			redirect_to profile_album_pictures_path(@album), :notice => "Successfully added an Album!"
 		else
 			render :action => "new"
 		end
@@ -28,7 +28,7 @@ class Profile::AlbumsController < Profile::ProfileController
 		@album.image = params[:album][:image]
 		@album.featured = params[:album][:featured]
 		if @album.save!
-			redirect_to profile_album_pictures_path, :notice => "Successfully updated an Album!"	
+			redirect_to profile_album_pictures_path(@album), :notice => "Successfully updated an Album!"	
 		else
 			render :action => "new"
 		end
