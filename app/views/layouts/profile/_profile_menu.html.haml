@@ -49,9 +49,9 @@
 		Profile
 		%ul.link
 			%li.item
-				= link_to 'Change Information', edit_profile_information_path(current_user)
-			%li.item
 				= link_to 'Profile Page', other_user_path(current_user.username)
+			%li.item
+				= link_to 'Change Information', edit_profile_information_path(current_user)
 			%li.item
 				= link_to 'Crop Profile Picture', edit_profile_crop_path(current_user.id)
 
