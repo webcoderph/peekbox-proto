@@ -7,14 +7,27 @@
 	-if @event.image?
 		%div#event-page-image
 			= image_tag @event.image_url(:event_page).to_s
-		-unless current_user == nil
-			%div{:style=>"text-align:right;margin-right:160px"}
+		%div{:style => "width:620px;margin: 0 auto;"}
+			%div#sharethis{:style => "float:left;text-align:right;margin:0 auto;"}
+				%span.st_facebook_hcount{:displayText => "Facebook"}
+				%span.st_twitter_hcount{:displayText => "Tweet"}
+				%span.st_googleplus_hcount{:displayText => "google plus"}
+				%span.st_sharethis_hcount{:displayText => "shareThis"}
+			-unless current_user == nil
 				-if current_user.is_bookmarked(@event)
-					= button_to "My Peek", :controller => "profile/bookmark", :method => "post", :event => @event.id
+					= button_to "My Peek", {:controller => "profile/bookmark", :method => "post", :event => @event.id}, {:style => "float:right;margin::0px -10px 0px 0px;padding-top:3px;"}
 				-else
-					= button_to "unPeek me", :controller => "profile/bookmark", :action => "unbookmark",  :id => @event.id
+					= button_to "unPeek me", {:controller => "profile/bookmark", :action => "unbookmark",  :id => @event.id}, {:style => "float:right;margin:0px -10px 0px 0px;padding-top:3px"}
+			%div{:style => "float:right"}
+				%p{:style => "margin:0px 5px 0px 5px"}
+					Peeks:
+					-if @event.bookmarks == nil
+						= "0"
+					-else
+						= @event.bookmarks.count
+		%br{:style => "clear:both"}
 	-unless current_user== nil
-		-if current_user.admin
+		-if current_user.admin || current_user = @event.user
 			%div
 				=link_to "Edit", edit_profile_event_path(@event.id)
 	%p
