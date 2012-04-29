@@ -8,10 +8,14 @@
 	= collection_select(:video, :category_id, @all_category, :id, :title)
 	%br
 	%label{:for => "contest"} Contest:
+	%span.optional
+		(optional)
 	%br
 	= collection_select(:video, :contest_id, @contests, :id, :title)
 	%br
 	%label{:for => "eligibility_code"} Eligibility Code:
+	%span.optional
+		(optional)
 	%br
 	= video_form.text_field :eligibility_code
 	%br
