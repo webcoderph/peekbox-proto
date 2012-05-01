@@ -13,11 +13,6 @@
 	-if @album.image?
 		%div#album-page-image
 			= image_tag @album.image_url(:album_cover)
-	%div#sharethis{:style => "float:left;text-align:right;margin:0 auto;"}
-		%span.st_facebook_hcount{:displayText => "Facebook"}
-		%span.st_twitter_hcount{:displayText => "Tweet"}
-		%span.st_googleplus_hcount{:displayText => "google plus"}
-		%span.st_sharethis_hcount{:displayText => "shareThis"}
 	%br{:style => "clear:both"}
 	-unless current_user== nil
 		%p
