@@ -36,8 +36,9 @@
 	%div.link
 		Messages
 		%ul.link
-			%li.item
-				= link_to 'Compose' ,compose_profile_messages_path
+			-unless current_user.friends.count == 0
+				%li.item
+					= link_to 'Compose' ,compose_profile_messages_path
 			%li.item
 				= link_to 'Inbox', inbox_profile_messages_path 
 			%li.item
