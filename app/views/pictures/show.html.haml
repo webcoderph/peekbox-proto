@@ -19,6 +19,13 @@
 						= button_to "My Peek", :controller => "profile/picture_bookmark", :method => "post", :picture => pic.id
 					-else
 						= button_to "unPeek me", :controller => "profile/picture_bookmark", :action => "unbookmark",  :id => pic.id
+				%div{:style => "float:right"}
+					%p{:style => "margin:0px 5px 0px 5px"}
+						Peeks:
+						-if pic.picture_bookmarks == nil
+							= "0"
+						-else
+							= pic.picture_bookmarks.count
 		%p
 			%p
 				Description:
