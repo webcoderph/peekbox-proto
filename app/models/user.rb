@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
 	has_many :messages
 	has_many :peekme, :through => :bookmarks
 	has_many :bookmarks, :dependent => :destroy
+
+	has_many :picture_marked, :through => :picture_bookmarks
+	has_many :picture_bookmarks, :dependent => :destroy
+
 	has_many :friends, :through => :friendships
 	has_many :friendships, :dependent => :destroy
 	#has_many :friends, :through => :friendships, :conditions => "status = 'accepted'"
@@ -50,6 +54,11 @@ class User < ActiveRecord::Base
 
 	def is_bookmarked(event) 
 		@bookmarked = Bookmark.where(:user_id => self.id, :event_id => event.id).first
+		@bookmarked.blank?
+	end
+
+	def is_picture_bookmarked(picture) 
+		@bookmarked = PictureBookmark.where(:user_id => self.id, :picture_id => picture.id).first
 		@bookmarked.blank?
 	end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120424163554) do
+ActiveRecord::Schema.define(:version => 20120501083948) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -143,6 +143,16 @@ ActiveRecord::Schema.define(:version => 20120424163554) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "picture_bookmarks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "picture_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "picture_bookmarks", ["picture_id"], :name => "index_picture_bookmarks_on_picture_id"
+  add_index "picture_bookmarks", ["user_id"], :name => "index_picture_bookmarks_on_user_id"
 
   create_table "pictures", :force => true do |t|
     t.string   "title"
