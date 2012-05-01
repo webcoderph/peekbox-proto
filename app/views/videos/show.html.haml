@@ -13,29 +13,30 @@
 			-else
 				= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
 		%p
-		%div#sharethis
+		%div#sharethis{:style => "float:left"}
 			%span.st_facebook_hcount{:displayText => "Facebook"}
 			%span.st_twitter_hcount{:displayText => "Tweet"}
 			%span.st_googleplus_hcount{:displayText => "google plus"}
 			%span.st_sharethis_hcount{:displayText => "shareThis"}
-		-unless current_user == nil
-			-if current_user.is_video_bookmarked(@video)
-				= button_to "My Peek", {:controller => "profile/video_bookmark", :method => "post", :video => @video.id}, {:style => "float:right;margin:0px -10px 0px 0px;padding-top:3px;"}
-			-else
-				= button_to "unPeek me", {:controller => "profile/video_bookmark", :action => "unbookmark",  :id => @video.id}, {:style => "float:right;margin:0px -10px 0px 0px;padding-top:3px"}
-		%div{:style => "float:right"}
+		%div{:style => "float:left"}
 			%p{:style => "margin:0px 5px 0px 5px"}
 				Peeks:
 				-if @video.video_bookmarks == nil
 					= "0"
 				-else
 					= @video.video_bookmarks.count
+		-unless current_user == nil
+			-if current_user.is_video_bookmarked(@video)
+				= button_to "My Peek", {:controller => "profile/video_bookmark", :method => "post", :video => @video.id}, {:style => "margin:0px -10px 0px 0px;padding-top:3px;"}
+			-else
+				= button_to "unPeek me", {:controller => "profile/video_bookmark", :action => "unbookmark",  :id => @video.id}, {:style => "margin:0px -10px 0px 0px;padding-top:3px"}
 			
-			-unless current_user == nil
-				-if current_user.admin
-					=link_to "Edit", edit_profile_video_path(@video.id)
-				%p
-					=@video.description
+		%br{:style => "clear:both"}
+		-unless current_user == nil
+			-if current_user.admin
+				=link_to "Edit", edit_profile_video_path(@video.id)
+			%p
+				=@video.description
 		%p
 			Uploaded By:
 		%div#video-owner
