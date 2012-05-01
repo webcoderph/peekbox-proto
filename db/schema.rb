@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120501083948) do
+ActiveRecord::Schema.define(:version => 20120501142157) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -213,6 +213,16 @@ ActiveRecord::Schema.define(:version => 20120501083948) do
     t.string   "thumbnail"
     t.boolean  "processed",          :default => false
   end
+
+  create_table "video_bookmarks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "video_bookmarks", ["user_id"], :name => "index_video_bookmarks_on_user_id"
+  add_index "video_bookmarks", ["video_id"], :name => "index_video_bookmarks_on_video_id"
 
   create_table "videos", :force => true do |t|
     t.string   "title"

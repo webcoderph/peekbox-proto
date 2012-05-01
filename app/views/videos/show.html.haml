@@ -18,6 +18,11 @@
 			%span.st_twitter_hcount{:displayText => "Tweet"}
 			%span.st_googleplus_hcount{:displayText => "google plus"}
 			%span.st_sharethis_hcount{:displayText => "shareThis"}
+		-unless current_user == nil
+			-if current_user.is_video_bookmarked(@video)
+				= button_to "My Peek", {:controller => "profile/video_bookmark", :method => "post", :video => @video.id}, {:style => "float:right;margin:0px -10px 0px 0px;padding-top:3px;"}
+			-else
+				= button_to "unPeek me", {:controller => "profile/video_bookmark", :action => "unbookmark",  :id => @video.id}, {:style => "float:right;margin:0px -10px 0px 0px;padding-top:3px"}
 			
 			-unless current_user == nil
 				-if current_user.admin

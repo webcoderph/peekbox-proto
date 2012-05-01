@@ -25,6 +25,9 @@ class User < ActiveRecord::Base
 	has_many :picture_marked, :through => :picture_bookmarks
 	has_many :picture_bookmarks, :dependent => :destroy
 
+	has_many :video_marked, :through => :video_bookmarks
+	has_many :video_bookmarks, :dependent => :destroy
+
 	has_many :friends, :through => :friendships
 	has_many :friendships, :dependent => :destroy
 	#has_many :friends, :through => :friendships, :conditions => "status = 'accepted'"
@@ -59,6 +62,11 @@ class User < ActiveRecord::Base
 
 	def is_picture_bookmarked(picture) 
 		@bookmarked = PictureBookmark.where(:user_id => self.id, :picture_id => picture.id).first
+		@bookmarked.blank?
+	end
+
+	def is_video_bookmarked(video) 
+		@bookmarked = VideoBookmark.where(:user_id => self.id, :video_id => video.id).first
 		@bookmarked.blank?
 	end
 

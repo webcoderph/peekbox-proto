@@ -36,6 +36,11 @@ Peekbox::Application.routes.draw do
 
 	#Users
 	namespace :profile do
+		resources :video_bookmark do
+			collection do
+				post "unbookmark"
+			end
+		end
 		resources :picture_bookmark do
 			collection do
 				post "unbookmark"

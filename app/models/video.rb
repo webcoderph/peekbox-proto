@@ -5,6 +5,7 @@ class Video < ActiveRecord::Base
 	has_one :eligibility_code
 	has_many :comments
 	has_many :thumbnails
+  has_many :video_bookmarks
 	mount_uploader :media, MediaUploader
 	attr_accessible :media
 	paginates_per 21

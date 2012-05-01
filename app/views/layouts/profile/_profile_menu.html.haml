@@ -10,12 +10,16 @@
 		Videos
 		%ul.link
 			%li.item
+				= link_to 'My peek' , profile_video_bookmark_index_path
+			%li.item
 				= link_to 'View Videos' , profile_videos_path
 			%li.item
 				= link_to 'Add Video' , new_profile_video_path
 	%div.link
 		Photos
 		%ul.link
+			%li.item
+				= link_to 'My peek' , profile_picture_bookmark_index_path
 			%li.item
 				= link_to 'View Albums' , profile_albums_path
 			%li.item
