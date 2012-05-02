@@ -6,3 +6,5 @@
 				%div.item-title-wrapper
 					%p.item-title
 						=album.title
+				%p.item-description
+					= truncate(album.description, :length => 30, :omission =>"...")
