@@ -25,6 +25,7 @@
 					= button_to "My Peek", {:controller => "profile/picture_bookmark", :method => "post", :picture => pic.id}, {:style => "padding-top:3px;margin-top:0px"}
 				-else
 					= button_to "unPeek me", :controller => "profile/picture_bookmark", :action => "unbookmark",  :id => pic.id
+		%br{:style => "clear:both"}
 		%p
 			%p
 				Description:
