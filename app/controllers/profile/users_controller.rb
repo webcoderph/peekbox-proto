@@ -3,7 +3,8 @@ class Profile::UsersController < Profile::ProfileController
   end
 
   def search
-		@users = User.find_by_first_name(params[:search])	
+		username = params[:friend][:username]
+		@users = User.where("username LIKE ?", "%#{username}%")	
   end
 
 end

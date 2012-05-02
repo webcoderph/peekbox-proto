@@ -7,11 +7,11 @@
 					=link_to "Add Friend", add_profile_friends_path(@user)
 				-else
 					=link_to "UnFriend", profile_friend_path(@user), :method => :delete
+					%div
+						=link_to "Send Message", compose_profile_messages_path
 			%div
 				&nbsp;
 				=link_to "View Friends", other_user_friends_path(@user.username)
-			%div
-				=link_to "Send Message"
 		- else
 			%div
 				=link_to "View Friends", other_user_friends_path(@user.username)
