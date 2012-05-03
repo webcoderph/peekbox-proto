@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 	scope :ban_list, where(:banned => true)
 
 	validates	 :username, :uniqueness => true, :presence => true
+	validates_format_of :username, :with => /^[-a-z]+$/
 
 	has_many :wall_post
 	has_many :messages
