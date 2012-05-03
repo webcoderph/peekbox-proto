@@ -42,4 +42,16 @@ class Profile::EventsController < Profile::ProfileController
 		end
 	end
 
+	def destroy
+		@event = Event.find_by_id(params[:id])
+		if current_user == @event.user
+			if @event.destroy
+				redirect_to profile_events_path, :notice => "Successfully deleted an Event!"	
+			else
+				redirect_to profile_events_path, :alert => "Error on deleting an Event!"	
+			end
+		end
+
+	end
+
 end

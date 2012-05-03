@@ -16,6 +16,18 @@ class Profile::VideosController < Profile::ProfileController
 		@video = Video.find_by_id(params[:id])
 	end
 
+	def destroy
+		@video = Video.find_by_id(params[:id])
+		if current_user == @video.user
+			if @video.destroy
+				redirect_to profile_videos_path, :notice => "Successfully deleted a Video!"	
+			else
+				redirect_to profile_videos_path, :alert => "Error on deleting an Video!"	
+			end
+		end
+
+	end
+
 	def update 
 		@video = Video.find_by_id(params[:video][:id])
 		@video.title = params[:video][:title]

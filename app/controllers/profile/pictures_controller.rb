@@ -46,9 +46,32 @@ class Profile::PicturesController < Profile::ProfileController
   end
 
   def update
+		@album = Album.find_by_id(params[:album_id])
+		if !@album.nil?
+			@picture = Picture.find(params[:id])
+			@picture.user = current_user
+			@picture.album = @album
+			@picture.description = params[:picture][:description]
+			@picture.title = params[:picture][:title]
+			if @picture.save!
+				redirect_to profile_album_pictures_path(@picture.album), :notice => "Successfully deleted an Picture!"	
+			else
+				redirect_to profile_album_pictures_path(@picture.album), :alert => "Error on deleting an Picture!"	
+			end
+		else
+				redirect_to profile_album_pictures_path(@picture.album), :alert => "Error on fetching an album!"	
+		end
   end
 
   def destroy
+		@picture = Picture.find(params[:id])
+		if current_user == @picture.user
+			if @picture.destroy
+				redirect_to profile_album_pictures_path(@picture.album), :notice => "Successfully deleted an Picture!"	
+			else
+				redirect_to profile_album_pictures_path(@picture.album), :alert => "Error on deleting an Picture!"	
+			end
+		end
   end
 
 end

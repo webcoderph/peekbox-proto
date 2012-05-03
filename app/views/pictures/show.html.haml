@@ -26,6 +26,11 @@
 				-else
 					= button_to "unPeek me", :controller => "profile/picture_bookmark", :action => "unbookmark",  :id => pic.id
 		%br{:style => "clear:both"}
+		-unless current_user == nil
+			-if current_user.admin || current_user == pic.user
+				=link_to "Edit", edit_profile_album_picture_path(pic.album, pic)
+				=link_to "Delete", profile_album_picture_path(pic.album, pic), :method => :delete, :confirm => "Are you sure?"
+		%br{:style => "clear:both"}
 		%p
 			%p
 				Description:
