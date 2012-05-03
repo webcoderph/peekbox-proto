@@ -9,7 +9,7 @@ class Profile::PictureBookmarkController < Profile::ProfileController
 	def unbookmark
 		@bookmarked = PictureBookmark.where(:user_id => current_user.id, :picture_id => params[:id]).first
 		if @bookmarked.destroy
-			redirect_to profile_picture_bookmark_index_path, :notice => "Successfully removed a bookmark"
+			redirect_to album_picture_path(@bookmarked.picture_marked.album, @bookmarked.picture_marked), :notice => "Successfully removed a bookmark"
 		else
 			redirect_to pictures_path, :alert => "Error removing a bookmark"
 		end
@@ -21,7 +21,7 @@ class Profile::PictureBookmarkController < Profile::ProfileController
 		@bookmark.user = current_user
 		@bookmark.picture_marked = Picture.find(params[:picture])
 		if @bookmark.save!
-			redirect_to profile_picture_bookmark_index_path, :notice => "Successfully added a bookmark"
+			redirect_to album_picture_path(@bookmark.picture_marked.album, @bookmark.picture_marked), :notice => "Successfully added a bookmark"
 		else
 			redirect_to pictures_path, :notice => "Error adding a picture bookmark"
 		end
@@ -30,7 +30,7 @@ class Profile::PictureBookmarkController < Profile::ProfileController
   def destroy
 		@bookmarked = PictureBookmark.where(:user_id => current_user.id, :picture_id => params[:id]).first
 		if @bookmarked.destroy
-			redirect_to profile_picture_bookmark_index_path, :notice => "Successfully removed a bookmark"
+			redirect_to album_picture_path(@bookmark.picture_marked.album, @bookmark.picture_marked), :notice => "Successfully removed a bookmark"
 		else
 			redirect_to pictures_path, :alert => "Error removing a bookmark"
 		end

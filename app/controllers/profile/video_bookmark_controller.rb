@@ -11,7 +11,7 @@ class Profile::VideoBookmarkController < Profile::ProfileController
 		@bookmark.user = current_user
 		@bookmark.video_marked = Video.find(params[:video])
 		if @bookmark.save!
-			redirect_to profile_video_bookmark_index_path, :notice => "Successfully added a bookmark"
+			redirect_to video_path(@bookmark.video_marked), :notice => "Successfully added a bookmark"
 		else
 			redirect_to videos_path, :notice => "Error adding bookmark"
 		end
@@ -20,7 +20,7 @@ class Profile::VideoBookmarkController < Profile::ProfileController
 	def destroy
 		@bookmarked = VideoBookmark.where(:user_id => current_user.id, :video_id => params[:id]).first
 		if @bookmarked.destroy
-			redirect_to profile_video_bookmark_index_path, :notice => "Successfully removed a bookmark"
+			redirect_to video_path(@bookmarked.video_marked), :notice => "Successfully removed a bookmark"
 		else
 			redirect_to videos_path, :alert => "Error removing a bookmark"
 		end
@@ -35,7 +35,7 @@ class Profile::VideoBookmarkController < Profile::ProfileController
   def unbookmark
 		@bookmarked = VideoBookmark.where(:user_id => current_user.id, :video_id => params[:id]).first
 		if @bookmarked.destroy
-			redirect_to profile_video_bookmark_index_path, :notice => "Successfully removed a bookmark"
+			redirect_to video_path(@bookmarked.video_marked), :notice => "Successfully removed a bookmark"
 		else
 			redirect_to videos_path, :alert => "Error removing a bookmark"
 		end
