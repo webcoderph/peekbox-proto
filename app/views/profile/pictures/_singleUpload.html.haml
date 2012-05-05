@@ -1,7 +1,7 @@
 %br{:style => "clear:both"}
 %hr
 	%p
-		Single Upload
+		Single Picture Upload
 
 = form_for :picture, :url => profile_album_pictures_path(@album.id), :html => {:multipart => true} do |picture_form| 
 	%label{:for => "title"} Title:
