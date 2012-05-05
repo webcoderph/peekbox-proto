@@ -1,9 +1,5 @@
 %h1
-	-unless current_user== nil
-		-if current_user.admin
-			Pictures in "#{link_to @album.title,edit_profile_album_path(@album.id) }" Album
-		-else
-			Pictures in "#{@album.title}" Album
+	Pictures in "#{link_to @album.title,edit_profile_album_path(@album.id) }" Album
 -if @pictures.empty?
 	%p 
 		No Picture Available
