@@ -14,6 +14,8 @@
 							=pic.title
 						-else
 							="..."
+			%div
+				=link_to "delete", profile_album_picture_path(pic.album, pic.id), :method => :delete 
 
 = render "singleUpload"
 %hr

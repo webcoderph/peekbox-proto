@@ -41,4 +41,16 @@ class Profile::AlbumsController < Profile::ProfileController
 			@album = Album.find_by_id(params[:id])
 		end
 	end
+
+	def destroy
+		@album = Album.find_by_id(params[:id])
+		if current_user == @album.user
+			if @album.destroy
+				redirect_to profile_albums_path, :notice => "Successfully deleted an Album!"	
+			else
+				redirect_to profile_albums_path, :alert => "Error on deleting an Video!"	
+			end
+		end
+
+	end
 end

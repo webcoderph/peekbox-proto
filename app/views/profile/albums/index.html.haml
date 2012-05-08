@@ -12,4 +12,6 @@
 				%div#album_title.item-title-wrapper
 					%p.item-title
 						=album.title	
+			%div
+				=link_to "Delete", profile_album_path(album.id), :method => :delete
 %br{:style => "clear:both;"}
