@@ -2,6 +2,7 @@
 
 class MediaUploader < CarrierWave::Uploader::Base
 	include Rails.application.routes.url_helpers
+	include CarrierWaveDirect::Uploader
 
 	Rails.application.routes.default_url_options = ActionMailer::Base.default_url_options
 
@@ -12,7 +13,8 @@ class MediaUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   #storage :file
 	after :store, :zencode
-	storage :fog
+	#storage :fog
+
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -21,9 +23,9 @@ class MediaUploader < CarrierWave::Uploader::Base
   end
 
 
-	def cache_dir
-		"#{Rails.root}/tmp/uploads"
-	end
+	#def cache_dir
+	#	"#{Rails.root}/tmp/uploads"
+	#end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
