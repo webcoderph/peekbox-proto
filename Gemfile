@@ -46,7 +46,6 @@ gem 'json'
 gem 'kaminari'
 gem 'rails_autolink'
 gem 'flash_cookie_session'
-gem 'carrierwave_direct'
 
 group :development do
 	gem 'heroku-rails'
