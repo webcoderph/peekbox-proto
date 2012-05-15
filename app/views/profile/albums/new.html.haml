@@ -1,4 +1,13 @@
 =form_for @album, :url => profile_albums_path, :html => {:multipart => true} do |album| 
+	-if @album.errors.any?
+		%div#error_explanation
+			%h2
+				=pluralize(@album.errors.count, "error")
+				Prohibited this Album from being saved
+			%ul
+				-@album.errors.full_messages.each do |msg|
+					%li
+						=msg
 	%label{:for => "title"} Title:
 	%br
 	= album.text_field :title

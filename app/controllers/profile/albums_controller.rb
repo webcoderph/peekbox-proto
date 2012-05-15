@@ -10,7 +10,7 @@ class Profile::AlbumsController < Profile::ProfileController
 		@album.description = params[:album][:description]
 		@album.image = params[:album][:image]
 		@album.user = current_user
-		if @album.save! 
+		if @album.save
 			redirect_to profile_album_pictures_path(@album), :notice => "Successfully added an Album!"
 		else
 			render :action => "new"
