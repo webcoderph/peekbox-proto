@@ -30,7 +30,7 @@ class Profile::AlbumsController < Profile::ProfileController
 		if @album.save
 			redirect_to profile_album_pictures_path(@album), :notice => "Successfully updated an Album!"	
 		else
-			render :action => "new"
+			render :action => "edit", :alert => "Error on updating an Album"
 		end
 	end
 
