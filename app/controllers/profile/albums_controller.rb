@@ -27,7 +27,7 @@ class Profile::AlbumsController < Profile::ProfileController
 		@album.description = params[:album][:description]
 		@album.image = params[:album][:image]
 		@album.featured = params[:album][:featured]
-		if @album.save!
+		if @album.save
 			redirect_to profile_album_pictures_path(@album), :notice => "Successfully updated an Album!"	
 		else
 			render :action => "new"
