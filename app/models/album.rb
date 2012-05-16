@@ -1,6 +1,6 @@
 class Album < ActiveRecord::Base
 	validates	 :title, :presence => true
-	validates_format_of :title, :with => /^[-a-z0-9 ]+$/
+	validates_format_of :title, :with => /^[\w \ ]+$/
 	attr_accessible :album_id, :user_id, :image
 	belongs_to :user
 	has_many :pictures
