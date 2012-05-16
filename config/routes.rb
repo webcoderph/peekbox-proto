@@ -30,6 +30,10 @@ Peekbox::Application.routes.draw do
 				get "ban"
 				get "unban"
 				get "ban_list"
+				get "delete_user"
+				get "make_admin"
+				get "make_normal"
+				get "admin"
 			end
 		end
 	end
