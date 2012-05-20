@@ -22,9 +22,9 @@
 						= pic.picture_bookmarks.count
 			-unless current_user == nil
 				-if current_user.is_picture_bookmarked(pic)
-					= button_to "My Peek", {:controller => "profile/picture_bookmark", :method => "post", :picture => pic.id}, {:style => "padding-top:3px;margin-top:0px"}
+					= button_to "", {:controller => "profile/picture_bookmark", :method => "post", :picture => pic.id}, {:style => "padding-top:3px;margin-top:0px", :class => "myPeekButton"}
 				-else
-					= button_to "unPeek me", :controller => "profile/picture_bookmark", :action => "unbookmark",  :id => pic.id
+					= button_to "", {:controller => "profile/picture_bookmark", :action => "unbookmark",  :id => pic.id}, {:style => "padding-top:3px;margin-top:0px",:class => "unPeekButton"}
 		%br{:style => "clear:both"}
 		-unless current_user == nil
 			-if current_user.admin || current_user == pic.user

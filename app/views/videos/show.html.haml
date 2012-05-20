@@ -27,9 +27,9 @@
 					= @video.video_bookmarks.count
 		-unless current_user == nil
 			-if current_user.is_video_bookmarked(@video)
-				= button_to "My Peek", {:controller => "profile/video_bookmark", :method => "post", :video => @video.id}, {:style => "margin:0px -10px 0px 0px;padding-top:3px;"}
+				= button_to "", {:controller => "profile/video_bookmark", :method => "post", :video => @video.id}, {:style => "margin:0px -10px 0px 0px;padding-top:3px;", :class => "myPeekButton"}
 			-else
-				= button_to "unPeek me", {:controller => "profile/video_bookmark", :action => "unbookmark",  :id => @video.id}, {:style => "margin:0px -10px 0px 0px;padding-top:3px"}
+				= button_to "", {:controller => "profile/video_bookmark", :action => "unbookmark",  :id => @video.id}, {:style => "margin:0px -10px 0px 0px;padding-top:3px", :class => "unPeekButton"}
 			
 		%br{:style => "clear:both"}
 		-unless current_user == nil
