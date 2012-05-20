@@ -353,10 +353,16 @@ input{
   border: 1px solid #000000;
   color: #ffffff;
   display: inline-block;
-  margin: 10px 0px 10px 0px;
-  padding: 8px;
+  margin: 0px 0px 10px 0px;
+  padding: 0px 8px 8px 8px;
   text-decoration: none;
 }
+select{
+  margin: 0px 0px 10px 0px;
+  padding: 0px 8px 8px 8px;
+
+}
+
 p.time-ago {
 	font-style:italic;
 	color: #00bbbb;
@@ -376,5 +382,11 @@ a {
 	background: url(unPeekButton.png) no-repeat center top;
 	width: 72px;
 	height:21px;
+}
 
+textarea {
+	width: 285px;
+	height: 130px;
+  margin: 0px 0px 10px 0px;
+  padding: 0px 8px 8px 8px;
 }
