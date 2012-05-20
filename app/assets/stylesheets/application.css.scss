@@ -365,3 +365,16 @@ p.time-ago {
 a {
 	text-decoration:none;
 }
+.myPeekButton {
+  border-radius: 0px;
+	background: url(myPeekButton.png) no-repeat center top;
+	width: 72px;
+	height:21px;
+}
+.unPeekButton {
+  border-radius: 0px;
+	background: url(unPeekButton.png) no-repeat center top;
+	width: 72px;
+	height:21px;
+
+}
