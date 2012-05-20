@@ -12,9 +12,9 @@
 
 %div#home-thumbs
 	%h3
-		Recently Uploaded Videos
+		Featured Events
 	%div#thumb_list
-		=render "recent_videos"
+		=render "featured_events"
 	%br{:style => "clear:both;"}
 	%h3
 		Video Picks
@@ -22,13 +22,13 @@
 		=render "featured_videos"
 	%br{:style => "clear:both;"}
 	%h3
-		Featured Events
-	%div#thumb_list
-		=render "featured_events"
-	%br{:style => "clear:both;"}
-	%h3
 		Featured Albums
 	%div#thumb_list
 		=render "featured_albums"
+	%br{:style => "clear:both;"}
+	%h3
+		Recently Uploaded Videos
+	%div#thumb_list
+		=render "recent_videos"
 	%br{:style => "clear:both;"}
 %br{:style => "clear:both;"}
