@@ -34,10 +34,10 @@
 		Photos
 	%div#album{:style => "float:left;width:733px;padding-top:50px;"}
 		=paginate @pictures
-		-@pictures.each do |picture|
+		-@pictures.each_with_index do |picture, index|
 			%div#each
 				%div#picture_cover.thumbnail-wrapper
-					=link_to (image_tag picture.image_url(:picture_thumb).to_s), album_picture_path(picture.album, picture.id) 
+					=link_to (image_tag picture.image_url(:picture_thumb).to_s), album_picture_path(picture.album, picture.id, :page => index+1) 
 					%div#album_title.item-title-wrapper
 						%p.item-title
 							-if picture.title == nil
