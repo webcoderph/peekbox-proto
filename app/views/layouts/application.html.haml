@@ -15,6 +15,16 @@
 		%meta{:name => "title", :description => "Peekbox.tv - Share  and Socialize"}
 		%meta{:name => "description", :description => "Connect with Peekbox.tv users to enjoy exclusive videos, tv shows and upcoming events streamed online"}
 		%meta{:name => "keywords", :description => "Connect with Peekbox.tv users to enjoy exclusive videos, tv shows and upcoming events streamed online"}
+	%script{:type => "text/javascript"}
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-26950680-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
 %body
 	%div#wrapper
 		%div#header
