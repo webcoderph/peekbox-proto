@@ -65,7 +65,7 @@ class Profile::PicturesController < Profile::ProfileController
 
   def destroy
 		@picture = Picture.find(params[:id])
-		if current_user == @picture.user
+		if current_user == @picture.user || current_user.admin
 			if @picture.destroy
 				redirect_to profile_album_pictures_path(@picture.album), :notice => "Successfully deleted an Picture!"	
 			else
