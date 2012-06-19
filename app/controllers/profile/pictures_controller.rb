@@ -1,8 +1,12 @@
 class Profile::PicturesController < Profile::ProfileController
 
   def index
-		@album = current_user.albums.find(params[:album_id])
-		@pictures = @album.pictures
+		begin
+			@album = current_user.albums.find(params[:album_id])
+			@pictures = @album.pictures
+		rescue
+			nil
+		end
   end
 
   def edit
