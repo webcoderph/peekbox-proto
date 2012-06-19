@@ -1,12 +1,8 @@
 class Profile::PicturesController < Profile::ProfileController
 
   def index
-		begin
 			@album = current_user.albums.find(params[:album_id])
 			@pictures = @album.pictures
-		rescue
-			nil
-		end
   end
 
   def edit
@@ -75,7 +71,7 @@ class Profile::PicturesController < Profile::ProfileController
 		@picture = Picture.find(params[:id])
 		if current_user == @picture.user || current_user.admin
 			if @picture.destroy
-				redirect_to profile_album_pictures_path(@picture.album), :notice => "Successfully deleted an Picture!"	
+				redirect_to album_pictures_path(@picture.album), :notice => "Successfully deleted an Picture!"	
 			else
 				redirect_to profile_album_pictures_path(@picture.album), :alert => "Error on deleting an Picture!"	
 			end
