@@ -7,6 +7,8 @@
 	-unless current_user == nil
 		-if current_user.admin
 			%div
+				=link_to "Admin Delete",admin_album_path(@album.id), :method => :delete, :confirm => "Are you sure?"
+				%br 
 				=link_to "Admin Edit", edit_profile_album_path(@album.id)
 %br{:style => "clear:both;"}
 %div#albums-page

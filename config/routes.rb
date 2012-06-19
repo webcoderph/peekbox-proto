@@ -1,4 +1,6 @@
 Peekbox::Application.routes.draw do
+  resources :s3_uploads
+
 	devise_for :users, :controllers => {:session => "user/session"} 
 
 	post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
@@ -7,6 +9,7 @@ Peekbox::Application.routes.draw do
 
 	namespace :admin do
 		resources :categories, :only => [:index, :new, :create, :edit, :update] 
+		resources :albums
 		resources :contests do
 			member do
 				get "change_status"
@@ -92,6 +95,9 @@ Peekbox::Application.routes.draw do
 		end
 		resources :events
 		resources :videos do
+			collection do
+				get "uploaded"
+			end
 			resources :comments
 		end
 	end

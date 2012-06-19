@@ -6,7 +6,9 @@
 %br{:style => "clear:both;"}
 	-if current_user.admin
 		%div
-			=link_to "Admin Edit", edit_profile_album_path(@album.id)
+			=link_to "Admin Delete",admin_album_path(@album.id)
+			%br 
+			=link_to "Admin Edit", edit_admin_album_path(@album.id)
 %br{:style => "clear:both;"}
 %div#albums-page
 	-if @album.image?
