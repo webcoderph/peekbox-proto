@@ -10,6 +10,7 @@ class Profile::PicturesController < Profile::ProfileController
 			@album = Album.find(params[:album_id])
 		else
 			@album = current_user.albums.find(params[:album_id])
+		end
 		@picture = Picture.find(params[:id])
   end
 
