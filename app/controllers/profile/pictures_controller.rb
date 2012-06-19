@@ -10,8 +10,6 @@ class Profile::PicturesController < Profile::ProfileController
 			@album = Album.find(params[:album_id])
 		else
 			@album = current_user.albums.find(params[:album_id])
-			if @album == nil
-				redirect_to albums_path, :alert => "Unable to edit pictures"
 		@picture = Picture.find(params[:id])
   end
 
