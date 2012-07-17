@@ -5,7 +5,7 @@
 	%div.post
 		-@wall_posts.each do |post|
 			%div
-				-unless post.poster.profilepic == nil
+				-if post.poster.profilepic == nil
 					%div#wall-post
 						%div#wall-poster-pic
 							=link_to (image_tag post.poster.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(post.poster.username)
