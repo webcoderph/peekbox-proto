@@ -31,7 +31,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'fog'
-gem 'therubyracer'
+gem 'therubyracer', :platform => :ruby 
 gem 'execjs'
 gem 'haml'
 gem 'haml-rails'
